@@ -1,84 +1,76 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Levie Lameyra | Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-      background: #f9f9f9;
-    }
-    h1, h2 {
-      color: #222;
-    }
-    .box {
-      background: white;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 8px;
-    }
-    a {
-      color: #0066cc;
-      text-decoration: none;
-    }
+    :root { --bg:#0b1220; --card:#111a2e; --text:#e8eefc; --muted:#b7c2e0; --accent:#7aa2ff; }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,system-ui,sans-serif;background:linear-gradient(180deg,#070c16,#0b1220);color:var(--text)}
+    .wrap{max-width:980px;margin:0 auto;padding:28px 16px 60px}
+    .nav{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:18px}
+    .nav .brand{font-weight:700;letter-spacing:.2px}
+    .nav a{color:var(--muted);text-decoration:none;padding:10px 12px;border-radius:10px}
+    .nav a:hover{background:rgba(255,255,255,.06);color:var(--text)}
+    .grid{display:grid;grid-template-columns:1.3fr .7fr;gap:16px}
+    @media(max-width:860px){.grid{grid-template-columns:1fr}}
+    .card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:18px}
+    h1{margin:0 0 6px;font-size:34px}
+    .subtitle{margin:0;color:var(--muted)}
+    .btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .btn{display:inline-block;background:rgba(122,162,255,.16);border:1px solid rgba(122,162,255,.35);color:var(--text);text-decoration:none;padding:10px 12px;border-radius:12px}
+    .btn:hover{background:rgba(122,162,255,.24)}
+    ul{margin:10px 0 0;padding-left:18px;color:var(--muted)}
+    .pill{display:inline-block;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.10);padding:6px 10px;border-radius:999px;margin:6px 6px 0 0;color:var(--muted);font-size:13px}
+    .footer{margin-top:18px;color:var(--muted);font-size:13px}
   </style>
 </head>
-
 <body>
+  <div class="wrap">
+    <div class="nav">
+      <div class="brand">Levie Lameyra</div>
+      <div>
+        <a href="index.html">Home</a>
+        <a href="experience.html">Experience</a>
+        <a href="skills.html">Skills</a>
+        <a href="certificates.html">Certificates</a>
+      </div>
+    </div>
 
-<div class="box">
-  <h1>Levie Lameyra</h1>
-  <p>Virtual Assistant | Data Entry | Technical Support</p>
+    <div class="grid">
+      <div class="card">
+        <h1>Hi, I’m Levie 👋</h1>
+        <p class="subtitle">Virtual Assistant • Data Entry • Technical Support</p>
 
-  <p>
-    <a href="#">LinkedIn</a> |
-    <a href="#">Upwork</a> |
-    <a href="#">Fiverr</a>
-  </p>
-</div>
+        <div class="btns">
+          <a class="btn" href="Resume.pdf" target="_blank">Download Resume</a>
+          <a class="btn" href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+          <a class="btn" href="#" target="_blank">Upwork</a>
+          <a class="btn" href="#" target="_blank">Fiverr</a>
+        </div>
 
-<div class="box">
-  <h2>About Me</h2>
-  <p>
-    I am a reliable and detail-oriented Virtual Assistant with experience in
-    data entry, technical support, and online research. I am committed to
-    delivering accurate work and meeting deadlines.
-  </p>
-</div>
+        <p style="margin-top:14px;color:var(--muted);line-height:1.6">
+          I help clients with accurate data entry, web research, and day-to-day admin support.
+          I’m detail-oriented, reliable, and I communicate clearly to make projects smooth and on time.
+        </p>
+      </div>
 
-<div class="box">
-  <h2>Resume</h2>
-  <p><a href="Resume.pdf">Download My Resume</a></p>
-</div>
+      <div class="card">
+        <h2 style="margin:0 0 10px">Quick Skills</h2>
+        <span class="pill">Excel / Google Sheets</span>
+        <span class="pill">Data Entry</span>
+        <span class="pill">Web Research</span>
+        <span class="pill">Email Support</span>
+        <span class="pill">File Organization</span>
+        <span class="pill">Basic Tech Support</span>
 
-<div class="box">
-  <h2>Skills</h2>
-  <ul>
-    <li>Data Entry & Web Research</li>
-    <li>Microsoft Excel / Google Sheets</li>
-    <li>Email & Chat Support</li>
-    <li>Basic Technical Support</li>
-  </ul>
-</div>
+        <div class="footer">
+          Tip: Use the tabs above to view my Experience, Skills, and Certificates.
+        </div>
+      </div>
+    </div>
 
-<div class="box">
-  <h2>Portfolio</h2>
-  <p>Coming soon...</p>
-</div>
-
-<div class="box">
-  <h2>Certificates</h2>
-  <p>Coming soon...</p>
-</div>
-
-<div class="box">
-  <h2>Contact</h2>
-  <p>Email: yourname@email.com</p>
-</div>
-
+  </div>
 </body>
 </html>
