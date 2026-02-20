@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio | Levie Lameyra</title>
+  <style>
+    :root { --bg:#0b1220; --text:#e8eefc; --muted:#b7c2e0; }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,system-ui,sans-serif;background:linear-gradient(180deg,#070c16,#0b1220);color:var(--text)}
+    .wrap{max-width:980px;margin:0 auto;padding:28px 16px 60px}
+    .nav{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:18px}
+    .nav .brand{font-weight:700}
+    .nav a{color:var(--muted);text-decoration:none;padding:10px 12px;border-radius:10px}
+    .nav a:hover{background:rgba(255,255,255,.06);color:var(--text)}
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    @media(max-width:760px){.grid{grid-template-columns:1fr}}
+    .card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:14px}
+    .muted{color:var(--muted)}
+    img{width:100%;border-radius:12px;border:1px solid rgba(255,255,255,.10)}
+    a{color:#cfe0ff}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="nav">
+      <div class="brand">Levie Lameyra</div>
+      <div>
+        <a href="index.html">Home</a>
+        <a href="experience.html">Experience</a>
+        <a href="skills.html">Skills</a>
+        <a href="certificates.html">Certificates</a>
+        <a href="portfolio.html">Portfolio</a>
+      </div>
+    </div>
+
+    <h1 style="margin:0 0 12px">Portfolio</h1>
+    <p class="muted">Here are sample outputs and projects. I can share more upon request.</p>
+
+    <div class="grid">
+      <div class="card">
+        <h3 style="margin:0 0 8px">Data Entry Sample</h3>
+        <img src="assets/portfolio/sample-data-entry.png" alt="Data Entry Sample">
+        <p class="muted" style="margin:10px 0 0">Google Sheets / Excel • Data cleaning & formatting</p>
+      </div>
+
+      <div class="card">
+        <h3 style="margin:0 0 8px">Research & Vendor Comparison</h3>
+        <img src="assets/portfolio/sample-research.png" alt="Research Sample">
+        <p class="muted" style="margin:10px 0 0">Web research • Pricing & availability comparison</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
