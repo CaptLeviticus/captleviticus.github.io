@@ -243,3 +243,27 @@ p{margin:0; color:var(--muted); font-size:var(--p); line-height:var(--lh)}
 .card .card.soft{
   margin-top: 18px;
 }
+/* ===== Card Hover Lift (subtle + professional) ===== */
+.card{
+  transition: transform .18s ease, border-color .18s ease, background .18s ease;
+}
+.card:hover{
+  transform: translateY(-2px);
+  border-color: rgba(122,162,255,.22);
+}
+.card.soft:hover{
+  transform: translateY(-1px);
+}
+/* ===== Scroll Reveal ===== */
+.reveal{
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.reveal.show{
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce){
+  .reveal{opacity:1; transform:none; transition:none}
+}
