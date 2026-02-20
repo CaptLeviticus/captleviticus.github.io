@@ -1,1 +1,105 @@
+:root{
+  --bg:#0b1220;
+  --card: rgba(255,255,255,.06);
+  --border: rgba(255,255,255,.10);
+  --text:#e8eefc;
+  --muted:#b7c2e0;
+  --accent:#7aa2ff;
+}
 
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family: Arial, system-ui, sans-serif;
+  background: linear-gradient(180deg,#070c16,#0b1220);
+  color:var(--text);
+}
+
+.wrap{max-width:1000px;margin:0 auto;padding:24px 16px 64px}
+
+.nav{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  background: rgba(11,18,32,.75);
+  border-bottom: 1px solid var(--border);
+}
+.nav .inner{
+  max-width:1000px;
+  margin:0 auto;
+  padding:10px 16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.brand{font-weight:700;letter-spacing:.3px}
+.nav a{
+  color:var(--muted);
+  text-decoration:none;
+  padding:8px 10px;
+  border-radius:10px;
+}
+.nav a:hover{background:rgba(255,255,255,.07); color:var(--text)}
+
+.hero{
+  display:grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap:16px;
+  margin-top:18px;
+}
+@media(max-width:860px){.hero{grid-template-columns:1fr}}
+
+.card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px;
+}
+
+h1{margin:0 0 6px;font-size:34px}
+h2{margin:0 0 12px}
+p{color:var(--muted); line-height:1.6}
+
+.btns{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+.btn{
+  display:inline-block;
+  text-decoration:none;
+  color:var(--text);
+  background: rgba(122,162,255,.16);
+  border: 1px solid rgba(122,162,255,.35);
+  padding:10px 12px;
+  border-radius:12px;
+}
+.btn:hover{background: rgba(122,162,255,.24)}
+
+.pills{margin-top:8px}
+.pill{
+  display:inline-block;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.10);
+  padding:6px 10px;
+  border-radius:999px;
+  margin:6px 6px 0 0;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.section{padding-top:70px; margin-top:-50px;} /* makes anchor jump nice */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(2,1fr);
+  gap:14px;
+}
+@media(max-width:760px){.grid{grid-template-columns:1fr}}
+
+img.thumb{
+  width:100%;
+  border-radius:12px;
+  border:1px solid var(--border);
+}
+
+.small{font-size:13px;color:var(--muted)}
