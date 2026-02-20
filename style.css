@@ -267,3 +267,19 @@ p{margin:0; color:var(--muted); font-size:var(--p); line-height:var(--lh)}
 @media (prefers-reduced-motion: reduce){
   .reveal{opacity:1; transform:none; transition:none}
 }
+/* ===== Service Card Icon ===== */
+.serviceTitle{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.serviceIcon{
+  width:34px;
+  height:34px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:12px;
+  background: rgba(122,162,255,.16);
+  border: 1px solid rgba(122,162,255,.25);
+}
