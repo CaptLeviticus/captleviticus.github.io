@@ -4,28 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portfolio | Levie Lameyra</title>
-  <style>
-    :root { --bg:#0b1220; --text:#e8eefc; --muted:#b7c2e0; }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Arial,system-ui,sans-serif;background:linear-gradient(180deg,#070c16,#0b1220);color:var(--text)}
-    .wrap{max-width:980px;margin:0 auto;padding:28px 16px 60px}
-    .nav{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:18px}
-    .nav .brand{font-weight:700}
-    .nav a{color:var(--muted);text-decoration:none;padding:10px 12px;border-radius:10px}
-    .nav a:hover{background:rgba(255,255,255,.06);color:var(--text)}
-    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-    @media(max-width:760px){.grid{grid-template-columns:1fr}}
-    .card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:14px}
-    .muted{color:var(--muted)}
-    img{width:100%;border-radius:12px;border:1px solid rgba(255,255,255,.10)}
-    a{color:#cfe0ff}
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="wrap">
-    <div class="nav">
-      <div class="brand">Levie Lameyra</div>
-      <div>
+
+  <div class="nav">
+    <div class="inner">
+      <div class="brand"><span class="dot"></span>Levie Lameyra</div>
+      <div class="navlinks">
         <a href="index.html">Home</a>
         <a href="experience.html">Experience</a>
         <a href="certificates.html">Certificates</a>
@@ -33,23 +19,123 @@
         <a href="contact.html">Contact</a>
       </div>
     </div>
+  </div>
 
-    <h1 style="margin:0 0 12px">Portfolio</h1>
-    <p class="muted">Here are sample outputs and projects. I can share more upon request.</p>
+  <div class="wrap">
 
-    <div class="grid">
-      <div class="card">
-        <h3 style="margin:0 0 8px">Data Entry Sample</h3>
-        <img src="assets/portfolio/sample-data-entry.png" alt="Data Entry Sample">
-        <p class="muted" style="margin:10px 0 0">Google Sheets / Excel • Data cleaning & formatting</p>
-      </div>
+    <div class="card">
+      <h1>Portfolio</h1>
+      <p>Selected samples that demonstrate my data entry, research, documentation, and support skills. More samples can be provided upon request.</p>
 
-      <div class="card">
-        <h3 style="margin:0 0 8px">Research & Vendor Comparison</h3>
-        <img src="assets/portfolio/sample-research.png" alt="Research Sample">
-        <p class="muted" style="margin:10px 0 0">Web research • Pricing & availability comparison</p>
+      <div class="btns" style="margin-top:14px">
+        <a class="btn secondary" href="contact.html">Request More Samples</a>
+        <a class="btn secondary" href="experience.html">View Experience</a>
       </div>
     </div>
+
+    <div class="sectionTitle">
+      <h2>Highlighted Work</h2>
+      <div class="hint">Professional-style samples</div>
+    </div>
+
+    <div class="grid">
+
+      <!-- Project 1 -->
+      <div class="card soft">
+        <h3>Contact List / Lead List Building</h3>
+        <p>Collected and organized contact information from websites into a clean spreadsheet format. Ensured accuracy and consistent formatting.</p>
+        <div class="pills">
+          <span class="pill">Google Sheets</span>
+          <span class="pill">Data Entry</span>
+          <span class="pill">Lead List</span>
+          <span class="pill">Quality Check</span>
+        </div>
+
+        <!-- OPTIONAL: add a screenshot later -->
+        <!-- <img class="thumb" style="margin-top:12px" src="assets/portfolio/lead-list.png" alt="Lead list sample"> -->
+
+        <div class="btns" style="margin-top:12px">
+          <!-- Replace # with your file when you upload -->
+          <a class="btn secondary" href="#" title="Upload a sample then link it">View Sample</a>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="card soft">
+        <h3>Vendor Research & Comparison</h3>
+        <p>Researched vendors and compared pricing, availability, and product details to support purchasing decisions.</p>
+        <div class="pills">
+          <span class="pill">Web Research</span>
+          <span class="pill">Vendor Comparison</span>
+          <span class="pill">Documentation</span>
+        </div>
+
+        <!-- OPTIONAL: add a screenshot later -->
+        <!-- <img class="thumb" style="margin-top:12px" src="assets/portfolio/vendor-research.png" alt="Vendor research sample"> -->
+
+        <div class="btns" style="margin-top:12px">
+          <a class="btn secondary" href="#">View Sample</a>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="card soft">
+        <h3>Documentation & Reporting Support</h3>
+        <p>Created and maintained clear documentation and reports for project tracking, updates, and installation records.</p>
+        <div class="pills">
+          <span class="pill">Documentation</span>
+          <span class="pill">Reporting</span>
+          <span class="pill">Organization</span>
+        </div>
+
+        <!-- OPTIONAL -->
+        <!-- <img class="thumb" style="margin-top:12px" src="assets/portfolio/reporting.png" alt="Documentation sample"> -->
+
+        <div class="btns" style="margin-top:12px">
+          <a class="btn secondary" href="#">View Sample</a>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="card soft">
+        <h3>Administrative & Task Coordination</h3>
+        <p>Handled admin support tasks such as managing records, assisting workflow coordination, and supporting teams with client-related tasks.</p>
+        <div class="pills">
+          <span class="pill">Admin Support</span>
+          <span class="pill">Coordination</span>
+          <span class="pill">Accuracy</span>
+        </div>
+
+        <div class="btns" style="margin-top:12px">
+          <a class="btn secondary" href="#">View Sample</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="card" style="margin-top:14px">
+      <div class="sectionTitle">
+        <h2>What I Can Deliver</h2>
+        <div class="hint">Client-ready outputs</div>
+      </div>
+
+      <div class="grid">
+        <div class="card soft">
+          <h3>Clean spreadsheets</h3>
+          <p>Well-formatted tables, consistent columns, validated entries, and organized worksheets.</p>
+        </div>
+        <div class="card soft">
+          <h3>Research summaries</h3>
+          <p>Structured findings with links, comparisons, and clear recommendations.</p>
+        </div>
+      </div>
+
+      <div class="footer">
+        <span>Want to see a specific sample? Message me.</span>
+        <span>© 2026 Levie Lameyra</span>
+      </div>
+    </div>
+
   </div>
 </body>
 </html>
