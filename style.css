@@ -310,3 +310,45 @@ a.card{
 }
 
 a.card{ text-decoration:none; color:inherit; }
+/* ===== Premium Home Hero ===== */
+.heroPremium{
+  padding: 34px 6px 6px;
+  margin-top: 10px;
+}
+
+.kicker{
+  color: var(--muted2);
+  font-size: 13px;
+  letter-spacing: .2px;
+  margin: 0 0 10px;
+}
+
+.heroTitle{
+  margin: 0;
+  font-size: clamp(34px, 5vw, 52px);
+  letter-spacing: -0.6px;
+  line-height: 1.12;
+}
+
+.accentText{
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.heroSub{
+  margin-top: 12px;
+  max-width: 72ch;
+}
+
+.heroCtas{ margin-top: 16px; }
+
+.heroMeta{
+  margin-top: 14px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  color: var(--muted2);
+  font-size: 13px;
+}
