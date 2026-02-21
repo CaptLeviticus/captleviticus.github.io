@@ -437,3 +437,87 @@ a.card{ text-decoration:none; color:inherit; }
   padding-left: 18px;
   line-height: 1.7;
 }
+/* ===== Premium Experience Timeline ===== */
+.timeline{
+  position: relative;
+  padding-left: 18px;
+  margin-top: 10px;
+}
+.timeline:before{
+  content:"";
+  position:absolute;
+  left: 6px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: rgba(255,255,255,.08);
+}
+.timelineItem{
+  position: relative;
+  margin-bottom: 22px;
+}
+.timelineDot{
+  position:absolute;
+  left: -2px;
+  top: 26px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  box-shadow: 0 0 0 6px rgba(59,130,246,.14);
+}
+.roleTop{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap: 12px;
+  flex-wrap:wrap;
+}
+.roleTitle{
+  margin:0;
+  font-size: 22px;
+  letter-spacing: -.3px;
+}
+.roleCompany{ margin-top: 4px; }
+.roleDate{
+  color: var(--muted2);
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.08);
+  background: rgba(255,255,255,.03);
+}
+.roleList{
+  margin-top: 14px;
+  padding-left: 18px;
+  line-height: 1.7;
+}
+
+/* ===== Portfolio polish ===== */
+.portfolioItem .btns{ margin-top: 14px; }
+.portfolioTop{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+}
+.badge{
+  font-size: 12px;
+  color: var(--muted);
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.08);
+  background: rgba(255,255,255,.03);
+  white-space: nowrap;
+}
+
+/* ===== Contact grid ===== */
+.contactGrid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 12px;
+}
+@media(max-width:760px){
+  .contactGrid{ grid-template-columns: 1fr; }
+}
