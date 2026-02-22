@@ -4,6 +4,12 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Levie Lameyra | Portfolio</title>
+
+  <!-- Premium font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -24,56 +30,58 @@
   <div class="wrap">
 
     <!-- HERO -->
-    <section class="section">
-      <div class="card sectionCard reveal">
+    <section class="section reveal">
+      <div class="card sectionCard">
         <div class="hero2">
           <div>
             <h1 class="heroTitle">Hi, I’m Levie 👋</h1>
             <p class="heroSub">Virtual Assistant | Data Entry | Admin Support</p>
-    
+
             <p style="margin-top:12px">
               I help businesses stay organized, efficient, and focused on growth through
               clean documentation, accurate data handling, and reliable support.
             </p>
-    
+
             <div class="btns" style="margin-top:16px">
               <a class="btn" href="contact.html">Hire Me</a>
               <a class="btn secondary" href="portfolio.html">View Portfolio</a>
             </div>
-    
+
             <p class="small" style="margin-top:12px">📍 San Pedro, Laguna • ✉️ levielameyra@gmail.com</p>
           </div>
-    
-          <!-- Optional photo (recommended). Put your image at: assets/profile.jpg -->
+
+          <!-- If you don't have a photo yet, keep it. It will show a clean placeholder background. -->
           <div class="avatarWrap">
             <div class="avatarBlob"></div>
-            <img class="avatarImg" src="assets/profile.jpg" alt="Levie profile photo">
+            <img class="avatarImg" src="assets/profile.jpg" alt="Levie profile photo"
+                 onerror="this.style.display='none'; this.parentElement.classList.add('noPhoto');">
+            <div class="avatarFallback">LL</div>
           </div>
         </div>
       </div>
     </section>
-    
+
     <!-- WHAT I CAN HELP YOU WITH -->
-    <section class="section">
-      <div class="card sectionCard reveal">
+    <section class="section reveal">
+      <div class="card sectionCard">
         <div class="sectionHeader">
           <h2>What I Can Help You With</h2>
           <div class="hint">Client-ready support</div>
         </div>
-    
+
         <div class="grid3">
           <div class="card soft serviceCard reveal">
             <div class="iconBadge">🧾</div>
             <h3>Data Entry & Research</h3>
             <p class="small">Data management, tracking sheets, web research, and summaries.</p>
           </div>
-    
+
           <div class="card soft serviceCard reveal">
             <div class="iconBadge">📩</div>
             <h3>Admin & Coordination</h3>
             <p class="small">Email support, supplier coordination, follow-ups, and reporting.</p>
           </div>
-    
+
           <div class="card soft serviceCard reveal">
             <div class="iconBadge">💬</div>
             <h3>Customer Support</h3>
@@ -82,28 +90,28 @@
         </div>
       </div>
     </section>
-    
+
     <!-- SELECTED WORK -->
-    <section class="section">
-      <div class="card sectionCard reveal">
+    <section class="section reveal">
+      <div class="card sectionCard">
         <div class="sectionHeader">
           <h2>Selected Work</h2>
           <div class="hint">Preview-friendly</div>
         </div>
-    
+
         <div class="grid">
           <a class="card soft reveal" href="portfolio.html">
             <div class="workThumb">QA / QC Logs • Spreadsheet</div>
             <h3 style="margin-top:12px">QA / QC Logs</h3>
             <p class="small">Tracking, checks, and reporting format.</p>
           </a>
-    
+
           <a class="card soft reveal" href="portfolio.html">
             <div class="workThumb">SOP • Documentation</div>
             <h3 style="margin-top:12px">Documentation SOP</h3>
             <p class="small">Structured processes and repeatable workflow.</p>
           </a>
-    
+
           <a class="card soft reveal" href="portfolio.html">
             <div class="workThumb">Vendor Comparison • XLSX</div>
             <h3 style="margin-top:12px">Vendor Comparison</h3>
@@ -112,15 +120,15 @@
         </div>
       </div>
     </section>
-    
+
     <!-- WHY WORK WITH ME -->
-    <section class="section">
-      <div class="card sectionCard reveal">
+    <section class="section reveal">
+      <div class="card sectionCard">
         <div class="sectionHeader">
           <h2>Why Work With Me</h2>
           <div class="hint">Reliable & organized</div>
         </div>
-    
+
         <div class="checkCols">
           <ul class="checkList">
             <li>Detail-oriented and accurate outputs</li>
@@ -135,15 +143,15 @@
         </div>
       </div>
     </section>
-    
+
     <!-- EXPERIENCE HIGHLIGHTS -->
-    <section class="section">
-      <div class="card sectionCard reveal">
+    <section class="section reveal">
+      <div class="card sectionCard">
         <div class="sectionHeader">
           <h2>Experience Highlights</h2>
           <div class="hint">Quick overview</div>
         </div>
-    
+
         <ul class="checkList">
           <li>Supplier coordination & product activation</li>
           <li>System installation support & troubleshooting logs</li>
@@ -152,13 +160,13 @@
         </ul>
       </div>
     </section>
-    
+
     <!-- CTA -->
-    <section class="section">
-      <div class="cta reveal">
+    <section class="section reveal">
+      <div class="cta">
         <h2>Let’s Work Together</h2>
         <p>Ready to help your business stay organized and efficient.</p>
-    
+
         <div class="ctaRow">
           <div class="small">Open for remote work • Available now</div>
           <div class="btns" style="margin:0">
