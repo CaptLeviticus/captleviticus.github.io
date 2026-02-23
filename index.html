@@ -55,9 +55,14 @@
 
           <!-- If you don't have a photo yet, keep it. It will show a clean placeholder background. -->
           <div class="avatarWrap">
-            <div class="avatarBlob"></div>
-            <img class="avatarImg" src="assets/profile.png" alt="Levie profile photo"
-                 onerror="this.style.display='none'; this.parentElement.classList.add('noPhoto');">
+            <div class="avatarHalo"></div>
+
+            <div class="portraitCard">
+              <img class="portraitImg" src="assets/profile.jpg" alt="Levie profile photo"
+                   onerror="this.style.display='none'; this.closest('.avatarWrap').classList.add('noPhoto');">
+              <div class="portraitFade"></div>
+            </div>
+
             <div class="avatarFallback">LL</div>
           </div>
         </div>
