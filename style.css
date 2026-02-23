@@ -990,3 +990,58 @@ body{ font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Rob
   background: rgba(255,255,255,.03);
   border-color: rgba(122,162,255,.14);
 }
+/* ===== HERO SaaS (hard override) ===== */
+.heroSaaS{
+  display:grid !important;
+  grid-template-columns: 1.15fr 0.85fr !important;
+  gap: 34px !important;
+  align-items:center !important;
+}
+
+.heroLeft{ min-width: 0; }
+
+.heroRight{
+  display:flex;
+  justify-content:flex-end;
+  min-width: 0;
+}
+
+/* mobile */
+@media (max-width: 900px){
+  .heroSaaS{
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+  .heroRight{ justify-content:flex-start; }
+}
+
+/* ===== Portrait (capped + blended) ===== */
+.portraitCard{
+  position: relative;
+  width: 100%;
+  max-width: 420px !important;  /* CAP SIZE */
+  aspect-ratio: 4 / 3 !important; /* prevents tall poster */
+  border-radius: 24px;
+  overflow: hidden;
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.10);
+  box-shadow: 0 24px 70px rgba(0,0,0,.55);
+  backdrop-filter: blur(10px);
+}
+
+.portraitImg{
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  object-position: 50% 22%;
+  transform: scale(1.02);
+}
+
+.portraitFade{
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(120% 90% at 50% 15%, rgba(0,0,0,0), rgba(0,0,0,.25) 60%, rgba(0,0,0,.55)),
+    linear-gradient(90deg, rgba(11,18,32,.45), rgba(11,18,32,0) 55%, rgba(11,18,32,.25));
+  pointer-events:none;
+}
