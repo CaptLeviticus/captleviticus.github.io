@@ -123,7 +123,7 @@ a{color:inherit}
   transition: transform .18s ease, border-color .18s ease, background .18s ease;
 }
 
-.card:hover{
+.card:hover{   transform: translateY(-4px);   border-color: rgba(122,162,255,.35);   box-shadow:     0 20px 60px rgba(0,0,0,.55),     0 0 0 1px rgba(122,162,255,.15); }   transform: translateY(-4px);   border-color: rgba(122,162,255,.35);   box-shadow:     0 20px 60px rgba(0,0,0,.55),     0 0 0 1px rgba(122,162,255,.15); }
   transform: translateY(-2px);
   border-color: rgba(59,130,246,.35);
   box-shadow: 0 14px 34px rgba(0,0,0,.45);
@@ -267,7 +267,7 @@ p{margin:0; color:var(--muted); font-size:var(--p); line-height:var(--lh)}
 .card{
   transition: transform .18s ease, border-color .18s ease, background .18s ease;
 }
-.card:hover{
+.card:hover{   transform: translateY(-4px);   border-color: rgba(122,162,255,.35);   box-shadow:     0 20px 60px rgba(0,0,0,.55),     0 0 0 1px rgba(122,162,255,.15); }   transform: translateY(-4px);   border-color: rgba(122,162,255,.35);   box-shadow:     0 20px 60px rgba(0,0,0,.55),     0 0 0 1px rgba(122,162,255,.15); }
   transform: translateY(-2px);
   border-color: rgba(122,162,255,.22);
 }
@@ -564,7 +564,7 @@ body::before{
   transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
 }
 
-.card:hover{
+.card:hover{   transform: translateY(-4px);   border-color: rgba(122,162,255,.35);   box-shadow:     0 20px 60px rgba(0,0,0,.55),     0 0 0 1px rgba(122,162,255,.15); }   transform: translateY(-4px);   border-color: rgba(122,162,255,.35);   box-shadow:     0 20px 60px rgba(0,0,0,.55),     0 0 0 1px rgba(122,162,255,.15); }
   transform: translateY(-3px);
   border-color: rgba(122,162,255,.28);
   box-shadow: 0 14px 40px rgba(0,0,0,.42);
