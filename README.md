@@ -6,33 +6,39 @@ Official executive portfolio website for **Levie Andrew Cruz Lameyra** (`@CaptLe
 
 ---
 
-## ✨ Key Modules & Interactive Features
+## 🏛️ Architecture: Clean Multi-Page Experience
 
-1. **Executive Landing & Core Skills Matrix**
-   - Dual-Theme Architecture (**Executive Obsidian Dark** & **Editorial Light Mode**) with instant toggle.
-   - Live availability indicator, quick-copy contact controls, and executive dossier summary.
-2. **Services & Consulting Module**
-   - **AI Workflow Automations** (LLM pipelines, prompt engineering, automated triage & virtual assistant workflows)
-   - **Spreadsheet & Dashboard Automations** (Google Sheets & Excel AHT/Quota trackers, dynamic QA rubric calculators)
-   - **AI-Assisted Programming & Web Tools** (Custom browser utilities, telemetry parsers, workflow interfaces)
-   - **Multimodal AI Data Annotation & LLM QA** (Video action segmentation, 8-point taxonomy metadata, RLHF & hallucination auditing)
-3. **Portfolio Module with 4 Playable Live Demos**
-   - **Spreadsheet Automation Demo:** Interactive AHT & QA Rubric Compliance Simulator with real-time SLA grading and CSV export.
-   - **AI Automation Demo:** Side-by-side LLM Hallucination & Grounding Verification Workbench with RLHF JSON payload export.
-   - **AI-Assisted Programming Demo:** Environmental Sensor Telemetry & Technical Spec Parser with anomaly simulation.
-   - **Multimodal Video QA Demo:** Interactive Video Action Segmentation & 8-Layer Taxonomy Inspector.
-4. **Interactive Experience & Education Timeline**
-   - Expandable/collapsible career progression across **Frodobots**, **Innodata**, **Access Gov Solutions Inc.**, and **Concentrix**, plus academic credentials from **Technological University of the Philippines – Taguig**.
-5. **Filterable Certifications & Lightbox Inspector**
-   - Interactive credential inspection modal covering **Udemy (AI Skills)**, **HubSpot Academy**, **IADALE Cybersecurity**, **Certification Partner Global (ISO 9001:2015 & ISO 31000:2018)**, and **ProVA (SEO)**.
-6. **Direct Contact & Printable Executive Resume (`resume.html`)**
-   - One-click email/phone copy buttons, direct inquiry form, downloadable original PDF resume, and a print-optimized executive CV view.
+Designed with the dark luxury agency aesthetic inspired by [luminaclippers.com](https://luminaclippers.com), featuring floating glassmorphic pill navbars, emerald glow accents, responsive mobile navigation, and zero-build standalone deployment.
+
+| Page | File | Purpose |
+|---|---|---|
+| **Home** | [`index.html`](./index.html) | High-impact executive landing page with hero headline, client proof metrics, and summary showcase modules for each pillar. |
+| **What I Do** | [`services.html`](./services.html) | Deep dive into the 4 service pillars, deliverables scope, 4-step delivery framework, and flexible engagement models. |
+| **Workbenches** | [`workbenches.html`](./workbenches.html) | 4 playable live simulators (AHT Spreadsheet, LLM Grounding Auditor, Telemetry Parser, Video Taxonomy Studio) + Download Center for all 8 files. |
+| **Experiences** | [`experiences.html`](./experiences.html) | Comprehensive career timeline (Frodobots, Innodata, Access Gov, Concentrix), formal TUP engineering degree, and skills matrix. |
+| **Credentials** | [`credentials.html`](./credentials.html) | Filterable certifications gallery with high-resolution lightbox inspector for Udemy, HubSpot, IADALE, ISO 9001/31000, ProVA, and Solar PV. |
+| **Contact** | [`contact.html`](./contact.html) | Direct inquiry form with topic presets, 1-click email clipboard copy, direct contact channels, and response SLA guarantee. |
+| **Printable Resume** | [`resume.html`](./resume.html) | Clean, printer-optimized executive CV with 1-click print-to-PDF formatting. |
+
+---
+
+## 📂 Downloadable Work Samples & Real Attachments
+
+All real production deliverables from the repository are linked and downloadable from the **Workbenches** page:
+- `assets/portfolio/qa-qc-logs.xlsx` — Automated QA/QC pass/fail inspection log with AHT formulas.
+- `assets/portfolio/installation-assest-tracker.xlsx` — Hardware and telemetry deployment inventory tracker.
+- `assets/portfolio/vendor-comparison.xlsx` — Multi-parameter vendor quotation scoring matrix.
+- `assets/portfolio/qa-plan-and-log.pdf` — Evaluation protocols, rubric definitions, and grounding audit logs.
+- `assets/portfolio/qc-checklist.pdf` — Step-by-step checklist for multimodal data inspection.
+- `assets/portfolio/starlink-solar-installation-guide.pdf` — Hardware installation and off-grid power SOP.
+- `assets/portfolio/documentation-support-sop.pdf` — Calibration and support procedures.
+- `assets/portfolio/process-flow.pdf` — Video action cutting and peer QA architectural diagram.
 
 ---
 
 ## 🛠️ How to Edit Content
 
-All portfolio content is stored in one clean configuration file: **`data.js`**.
-- Open `data.js` in any text editor (or directly on GitHub.com by clicking the pencil icon).
-- Update your `socials` links (`linkedin`, `upwork`, `onlinejobs`), `avatarUrl`, `services`, `portfolio`, `experiences`, or `certificates`.
-- Save the file and refresh your browser!
+All portfolio content across all pages is powered by a single configuration file: **`data.js`**.
+- Open `data.js` in any text editor (or directly on GitHub.com).
+- Update `profile`, `socials`, `services`, `portfolio`, `experiences`, or `certificates`.
+- Save the file and refresh any page in your browser!

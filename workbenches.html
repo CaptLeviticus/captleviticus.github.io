@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Workbenches &amp; Deliverables | Levie Andrew Cruz Lameyra</title>
+  <meta
+    name="description"
+    content="Test live interactive workbenches and download real work samples: AHT Spreadsheet Calculator, LLM Hallucination Auditor, Telemetry Parser, and Video Taxonomy Studio."
+  />
+  <meta property="og:title" content="Workbenches & Deliverables — Levie Andrew Cruz Lameyra" />
+  <meta property="og:description" content="Playable AI and automation simulators plus downloadable Excel workbooks and technical documentation." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://captleviticus.github.io/workbenches.html" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500;1,6..72,600;1,6..72,700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+            serif: ['Newsreader', 'Georgia', 'serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          },
+          colors: {
+            brand: {
+              emerald: '#10b981',
+              neon: '#34d399',
+              dark: '#07090e',
+              card: '#0d111a',
+              border: 'rgba(255, 255, 255, 0.08)'
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- React 18 + Babel -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Portfolio Data -->
+  <script src="./data.js"></script>
+
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .font-display { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+    .font-editorial { font-family: 'Newsreader', Georgia, serif; font-style: italic; }
+    .agency-mesh {
+      background-color: #06080e;
+      background-image:
+        radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 85% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 15% 45%, rgba(16, 185, 129, 0.06) 0%, transparent 40%);
+    }
+    .agency-grid {
+      background-size: 48px 48px;
+      background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+    .pill-navbar {
+      background: rgba(10, 14, 22, 0.82);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+    }
+    .btn-lumina {
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-lumina:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.35);
+    }
+    .btn-ghost {
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-ghost:hover {
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+  </style>
+</head>
+<body class="bg-[#06080e] text-slate-100 antialiased selection:bg-emerald-500/30 selection:text-emerald-200">
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState } = React;
+    const DATA = window.PORTFOLIO_DATA;
+
+    function Icon({ name, className = "w-4 h-4" }) {
+      const icons = {
+        bot: <path d="M12 2a2 2 0 0 1 2 2v2h4a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4V4a2 2 0 0 1 2-2zm-3 8a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm6 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-6 6h6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>,
+        table: <path d="M3 3h18v18H3zM3 9h18M3 15h18M9 9v12M15 9v12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>,
+        code: <path d="m16 18 6-6-6-6M8 6l-6 6 6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>,
+        'check-circle': <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14M22 4 12 14.01l-3-3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>,
+        download: <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>,
+        'arrow-right': <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>,
+        'check': <path d="M20 6 9 17l-5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>,
+        'file-text': <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M16 13H8M16 17H8M10 9H8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>,
+        'external-link': <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>,
+        menu: <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>,
+        x: <path d="M18 6 6 18M6 6l12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>,
+        clock: <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none"/><polyline points="12 6 12 12 16 14" stroke="currentColor" strokeWidth="2" fill="none"/>,
+        sparkles: <path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+      };
+      return <svg className={className} viewBox="0 0 24 24">{icons[name] || icons.bot}</svg>;
+    }
+
+    function Navbar({ active = "workbenches" }) {
+      const [mobileOpen, setMobileOpen] = useState(false);
+
+      const navLinks = [
+        { label: "Home", href: "index.html", key: "home" },
+        { label: "What I Do", href: "services.html", key: "services" },
+        { label: "Workbenches", href: "workbenches.html", key: "workbenches" },
+        { label: "Experiences", href: "experiences.html", key: "experiences" },
+        { label: "Credentials", href: "credentials.html", key: "credentials" },
+        { label: "Contact", href: "contact.html", key: "contact" }
+      ];
+
+      return (
+        <header className="fixed top-5 inset-x-0 z-50 flex justify-center px-4 pointer-events-none">
+          <div className="pill-navbar rounded-full px-3 py-2 flex items-center justify-between gap-2 sm:gap-4 max-w-4xl w-full pointer-events-auto">
+            <a href="index.html" className="flex items-center gap-2.5 pl-2 group">
+              <img
+                src={DATA.profile.avatarUrl}
+                alt={DATA.profile.name}
+                className="w-8 h-8 rounded-full object-cover ring-1 ring-white/20 group-hover:ring-emerald-400 transition"
+              />
+              <div className="flex flex-col">
+                <span className="text-xs sm:text-sm font-semibold tracking-tight text-white group-hover:text-emerald-300 transition">
+                  {DATA.profile.shortName}
+                </span>
+                <span className="text-[10px] text-slate-400 hidden sm:block">
+                  {DATA.profile.username}
+                </span>
+              </div>
+            </a>
+
+            <nav className="hidden md:flex items-center gap-1 text-xs font-medium text-slate-300">
+              {navLinks.map((link) => (
+                <a
+                  key={link.key}
+                  href={link.href}
+                  className={`px-3 py-1.5 rounded-full transition ${
+                    active === link.key
+                      ? "bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 shadow-[0_0_12px_rgba(16,185,129,0.2)]"
+                      : "hover:text-white hover:bg-white/5"
+                  }`}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+
+            <div className="flex items-center gap-2">
+              <a
+                href="contact.html"
+                className="btn-lumina hidden sm:inline-flex items-center gap-1.5 bg-gradient-to-r from-emerald-500 to-emerald-400 text-slate-950 text-xs font-semibold px-4 py-2 rounded-full shadow-lg shadow-emerald-500/20"
+              >
+                <span>Hire Me / Inquire</span>
+                <Icon name="arrow-right" className="w-3.5 h-3.5" />
+              </a>
+
+              <button
+                onClick={() => setMobileOpen(!mobileOpen)}
+                className="md:hidden p-2 text-slate-300 hover:text-white hover:bg-white/5 rounded-full transition"
+                aria-label="Toggle menu"
+              >
+                <Icon name={mobileOpen ? "x" : "menu"} className="w-5 h-5" />
+              </button>
+            </div>
+          </div>
+
+          {mobileOpen && (
+            <div className="md:hidden fixed top-20 inset-x-4 bg-[#0a0f18]/95 backdrop-blur-xl border border-white/10 rounded-2xl p-4 shadow-2xl pointer-events-auto flex flex-col gap-2">
+              {navLinks.map((link) => (
+                <a
+                  key={link.key}
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className={`px-4 py-2.5 rounded-xl text-sm font-medium transition ${
+                    active === link.key
+                      ? "bg-emerald-500/20 text-emerald-400 font-semibold"
+                      : "text-slate-300 hover:bg-white/5 hover:text-white"
+                  }`}
+                >
+                  {link.label}
+                </a>
+              ))}
+              <a
+                href="contact.html"
+                className="btn-lumina mt-2 flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-emerald-400 text-slate-950 font-semibold py-2.5 rounded-xl text-sm"
+              >
+                <span>Hire Me / Inquire</span>
+                <Icon name="arrow-right" className="w-4 h-4" />
+              </a>
+            </div>
+          )}
+        </header>
+      );
+    }
+
+    /* 1. Interactive Spreadsheet Workbench */
+    function SpreadsheetWorkbench() {
+      const [tasks, setTasks] = useState(48);
+      const [hours, setHours] = useState(8);
+      const [deductions, setDeductions] = useState(1);
+      const targetQuota = 50;
+      const targetAHT = 9.5;
+
+      const aht = tasks > 0 ? ((hours * 60) / tasks).toFixed(1) : 0;
+      const quotaPct = Math.min(100, Math.round((tasks / targetQuota) * 100));
+      const qualityScore = Math.max(0, 100 - deductions * 2.5).toFixed(1);
+      const isSLAOk = Number(aht) <= targetAHT;
+
+      return (
+        <div id="spreadsheet-workbench" className="bg-[#0b101b] border border-white/10 rounded-3xl p-6 sm:p-10 mb-16 scroll-mt-28">
+          <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-6 border-b border-white/10">
+            <div>
+              <span className="text-xs font-mono uppercase tracking-wider text-emerald-400">Workbench 01 • Live Simulator</span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mt-1 font-display">
+                Automated AHT, QA/QC Logs &amp; Asset Tracker Suite
+              </h2>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <a
+                href="./assets/portfolio/qa-qc-logs.xlsx"
+                download
+                className="btn-lumina inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold bg-emerald-500 text-slate-950"
+              >
+                <Icon name="download" className="w-3.5 h-3.5" />
+                <span>QA/QC Logs (.xlsx)</span>
+              </a>
+              <a
+                href="./assets/portfolio/installation-assest-tracker.xlsx"
+                download
+                className="btn-ghost inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-medium bg-white/5 border border-white/15 text-slate-200"
+              >
+                <Icon name="download" className="w-3.5 h-3.5" />
+                <span>Asset Tracker (.xlsx)</span>
+              </a>
+              <a
+                href="./assets/portfolio/vendor-comparison.xlsx"
+                download
+                className="btn-ghost inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-medium bg-white/5 border border-white/15 text-slate-200"
+              >
+                <Icon name="download" className="w-3.5 h-3.5" />
+                <span>Vendor Comparison (.xlsx)</span>
+              </a>
+            </div>
+          </div>
+
+          <p className="text-sm text-slate-300 mb-8 max-w-3xl leading-relaxed">
+            This live interactive simulator demonstrates the exact self-calculating logic engineered into my downloadable production Excel workbooks. Adjust the sliders below to see real-time AHT, SLA threshold detection, and quota progress:
+          </p>
+
+          {/* Interactive Calculator Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-8">
+            <div className="lg:col-span-5 bg-black/40 border border-white/10 rounded-2xl p-6 flex flex-col justify-between">
+              <h3 className="text-xs font-mono uppercase tracking-wider text-slate-400 mb-4">Live Shift Parameters</h3>
+              
+              <div className="space-y-5">
+                <div>
+                  <div className="flex justify-between text-xs mb-1.5">
+                    <span className="text-slate-300">Tasks Completed Today</span>
+                    <span className="font-mono text-emerald-400 font-bold">{tasks} tasks</span>
+                  </div>
+                  <input
+                    type="range"
+                    min="10"
+                    max="80"
+                    value={tasks}
+                    onChange={(e) => setTasks(Number(e.target.value))}
+                    className="w-full accent-emerald-500 cursor-pointer"
+                  />
+                  <span className="text-[10px] text-slate-400">Daily Quota Target: 50 tasks</span>
+                </div>
+
+                <div>
+                  <div className="flex justify-between text-xs mb-1.5">
+                    <span className="text-slate-300">Shift Working Hours</span>
+                    <span className="font-mono text-emerald-400 font-bold">{hours} hrs</span>
+                  </div>
+                  <input
+                    type="range"
+                    min="4"
+                    max="12"
+                    step="0.5"
+                    value={hours}
+                    onChange={(e) => setHours(Number(e.target.value))}
+                    className="w-full accent-emerald-500 cursor-pointer"
+                  />
+                </div>
+
+                <div>
+                  <div className="flex justify-between text-xs mb-1.5">
+                    <span className="text-slate-300">QA Error Deductions</span>
+                    <span className="font-mono text-amber-400 font-bold">{deductions} error(s)</span>
+                  </div>
+                  <input
+                    type="range"
+                    min="0"
+                    max="5"
+                    value={deductions}
+                    onChange={(e) => setDeductions(Number(e.target.value))}
+                    className="w-full accent-emerald-500 cursor-pointer"
+                  />
+                  <span className="text-[10px] text-slate-400">2.5% deduction per QA infraction</span>
+                </div>
+              </div>
+
+              <div className="mt-6 pt-4 border-t border-white/10 text-[11px] text-slate-400 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+                <span>Active Model: Dynamic Excel Formula Simulation</span>
+              </div>
+            </div>
+
+            {/* Live Calculated KPI Cards */}
+            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="bg-[#0e1422] border border-white/10 rounded-2xl p-5 flex flex-col justify-between">
+                <div>
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400">Average Handling Time</span>
+                  <div className="text-3xl font-bold font-mono text-white mt-2">
+                    {aht} <span className="text-sm font-normal text-slate-400">min/task</span>
+                  </div>
+                </div>
+                <div className={`mt-4 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-medium ${
+                  isSLAOk ? "bg-emerald-500/15 text-emerald-400 border border-emerald-500/30" : "bg-rose-500/15 text-rose-400 border border-rose-500/30"
+                }`}>
+                  <span>{isSLAOk ? "Within SLA (≤ 9.5m)" : "Exceeds Target SLA"}</span>
+                </div>
+              </div>
+
+              <div className="bg-[#0e1422] border border-white/10 rounded-2xl p-5 flex flex-col justify-between">
+                <div>
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400">Quota Attainment</span>
+                  <div className="text-3xl font-bold font-mono text-emerald-400 mt-2">
+                    {quotaPct}%
+                  </div>
+                </div>
+                <div className="mt-4">
+                  <div className="w-full bg-white/10 h-2 rounded-full overflow-hidden">
+                    <div className="bg-emerald-500 h-full rounded-full transition-all duration-300" style={{ width: `${quotaPct}%` }}></div>
+                  </div>
+                  <span className="text-[10px] text-slate-400 mt-1 block">{tasks} / {targetQuota} completed</span>
+                </div>
+              </div>
+
+              <div className="bg-[#0e1422] border border-white/10 rounded-2xl p-5 flex flex-col justify-between">
+                <div>
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-slate-400">Quality Score</span>
+                  <div className="text-3xl font-bold font-mono text-white mt-2">
+                    {qualityScore}%
+                  </div>
+                </div>
+                <div className="mt-4 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-medium bg-white/5 border border-white/10 text-slate-300">
+                  <span>{Number(qualityScore) >= 95 ? "Pass (ISO High Tier)" : "Audit Flagged"}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-black/30 border border-white/5 rounded-2xl p-4 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="text-xs text-slate-300">
+              <strong className="text-white">Included in Repository:</strong> Three complete `.xlsx` workbooks containing real sheet formulas (`AVERAGEIFS`, conditional formatting, inventory macros, and QA deduction weighting).
+            </div>
+            <a
+              href="./assets/portfolio/qa-qc-logs.xlsx"
+              download
+              className="text-xs text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1.5 flex-shrink-0"
+            >
+              <span>Download Suite (.xlsx)</span>
+              <Icon name="download" className="w-3.5 h-3.5" />
+            </a>
+          </div>
+        </div>
+      );
+    }
+
+    /* 2. Interactive LLM Auditor Workbench */
+    function LlmAuditorWorkbench() {
+      const [groundingVerified, setGroundingVerified] = useState(true);
+      const [showJsonModal, setShowJsonModal] = useState(false);
+
+      const rlhfJson = {
+        prompt_id: "eval-2026-multimodal-049",
+        benchmark: "grounded_response_rubric_v3",
+        evaluator: "Levie Andrew Cruz Lameyra (CaptLeviticus)",
+        grounding_context: "The turbine rotor operates at 3,600 RPM. Primary lubrication oil temperature must remain between 45°C and 65°C.",
+        models: {
+          model_a: {
+            text: "The turbine operates at 3,600 RPM. Lubrication oil should be strictly maintained at 45°C–65°C.",
+            factual_accuracy_score: 1.0,
+            hallucination_detected: false,
+            rank: 1
+          },
+          model_b: {
+            text: "The turbine operates at 4,200 RPM and can run safely up to 95°C without lubrication checks.",
+            factual_accuracy_score: 0.1,
+            hallucination_detected: true,
+            hallucination_type: "Fabricated RPM & unsafe thermal boundary",
+            rank: 2
+          }
+        },
+        rlhf_preference: "model_a",
+        iso_rubric_compliant: true
+      };
+
+      return (
+        <div id="llm-workbench" className="bg-[#0b101b] border border-white/10 rounded-3xl p-6 sm:p-10 mb-16 scroll-mt-28">
+          <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-6 border-b border-white/10">
+            <div>
+              <span className="text-xs font-mono uppercase tracking-wider text-emerald-400">Workbench 02 • Live Sandbox</span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mt-1 font-display">
+                LLM Hallucination &amp; Grounding Verification Workbench
+              </h2>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <a
+                href="./assets/portfolio/qa-plan-and-log.pdf"
+                target="_blank"
+                rel="noreferrer"
+                className="btn-lumina inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold bg-emerald-500 text-slate-950"
+              >
+                <Icon name="file-text" className="w-3.5 h-3.5" />
+                <span>QA Plan &amp; Log (.pdf)</span>
+              </a>
+              <a
+                href="./assets/portfolio/qc-checklist.pdf"
+                target="_blank"
+                rel="noreferrer"
+                className="btn-ghost inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-medium bg-white/5 border border-white/15 text-slate-200"
+              >
+                <Icon name="file-text" className="w-3.5 h-3.5" />
+                <span>QC Checklist (.pdf)</span>
+              </a>
+            </div>
+          </div>
+
+          <p className="text-sm text-slate-300 mb-8 max-w-3xl leading-relaxed">
+            Side-by-side LLM response evaluation sandbox demonstrating strict fact-checking, grounding verification against ground-truth context, and exportable RLHF feedback.
+          </p>
+
+          {/* Ground Truth Context Box */}
+          <div className="bg-black/50 border border-emerald-500/20 rounded-2xl p-5 mb-6">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-xs font-mono uppercase tracking-wider text-emerald-400 font-semibold flex items-center gap-2">
+                <Icon name="sparkles" className="w-3.5 h-3.5" />
+                Ground Truth Context Source
+              </span>
+              <span className="text-[10px] font-mono text-slate-400">DOC-REF: TURB-OP-MANUAL-V2</span>
+            </div>
+            <p className="text-xs sm:text-sm text-slate-200 font-mono bg-white/[0.02] p-3 rounded-lg border border-white/5">
+              "The turbine rotor operates at standard grid frequency (3,600 RPM). Primary lubrication oil temperature must remain between 45°C and 65°C under normal load conditions."
+            </p>
+          </div>
+
+          {/* Model Comparison Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            {/* Model A */}
+            <div className="bg-emerald-950/20 border border-emerald-500/30 rounded-2xl p-5 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-bold text-emerald-400">Model Candidate A</span>
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                    Preferred (Rank 1)
+                  </span>
+                </div>
+                <p className="text-xs sm:text-sm text-slate-200 leading-relaxed mb-4">
+                  "The turbine operates at 3,600 RPM. Lubrication oil temperature should be maintained strictly between 45°C and 65°C."
+                </p>
+              </div>
+
+              <div className="pt-4 border-t border-emerald-500/20 flex items-center justify-between text-xs">
+                <span className="text-emerald-400 font-medium flex items-center gap-1.5">
+                  <Icon name="check" className="w-3.5 h-3.5" />
+                  100% Grounded
+                </span>
+                <span className="font-mono text-slate-300">Score: 5.0 / 5.0</span>
+              </div>
+            </div>
+
+            {/* Model B */}
+            <div className="bg-rose-950/20 border border-rose-500/30 rounded-2xl p-5 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-xs font-bold text-rose-400">Model Candidate B</span>
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 border border-rose-500/30">
+                    Flagged (Rank 2)
+                  </span>
+                </div>
+                <p className="text-xs sm:text-sm text-slate-200 leading-relaxed mb-4">
+                  "The turbine operates at 4,200 RPM and can run safely up to 95°C without regular lubrication checks."
+                </p>
+              </div>
+
+              <div className="pt-4 border-t border-rose-500/20 flex items-center justify-between text-xs">
+                <span className="text-rose-400 font-medium flex items-center gap-1.5">
+                  <Icon name="x" className="w-3.5 h-3.5" />
+                  Hallucination Detected
+                </span>
+                <span className="font-mono text-slate-300">Score: 1.0 / 5.0</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Action Bar */}
+          <div className="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-white/10">
+            <button
+              onClick={() => setShowJsonModal(!showJsonModal)}
+              className="btn-ghost inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-mono font-medium bg-white/5 border border-white/15 text-slate-200"
+            >
+              <span>{showJsonModal ? "Hide RLHF JSON Payload" : "View RLHF JSON Payload"}</span>
+              <Icon name="code" className="w-3.5 h-3.5" />
+            </button>
+
+            <span className="text-xs text-slate-400">
+              Evaluator: <strong className="text-white">Levie Lameyra</strong> • Priority-Shadowed Practice
+            </span>
+          </div>
+
+          {/* JSON Modal */}
+          {showJsonModal && (
+            <div className="mt-4 bg-black/80 border border-emerald-500/30 rounded-2xl p-5 font-mono text-xs text-emerald-300 overflow-x-auto">
+              <pre>{JSON.stringify(rlhfJson, null, 2)}</pre>
+            </div>
+          )}
+        </div>
+      );
+    }
+
+    /* 3. Environmental Telemetry Parser Workbench */
+    function SensorParserWorkbench() {
+      const [temp, setTemp] = useState(26.4);
+      const [ph, setPh] = useState(7.2);
+      const [turbidity, setTurbidity] = useState(3.1);
+
+      const isPhOk = ph >= 6.5 && ph <= 8.5;
+      const isTurbidityOk = turbidity <= 5.0;
+      const isSystemNormal = isPhOk && isTurbidityOk;
+
+      return (
+        <div id="sensor-workbench" className="bg-[#0b101b] border border-white/10 rounded-3xl p-6 sm:p-10 mb-16 scroll-mt-28">
+          <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-6 border-b border-white/10">
+            <div>
+              <span className="text-xs font-mono uppercase tracking-wider text-emerald-400">Workbench 03 • Live Telemetry</span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mt-1 font-display">
+                Environmental Telemetry Parser &amp; Technical SOPs
+              </h2>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <a
+                href="./assets/portfolio/starlink-solar-installation-guide.pdf"
+                target="_blank"
+                rel="noreferrer"
+                className="btn-lumina inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold bg-emerald-500 text-slate-950"
+              >
+                <Icon name="file-text" className="w-3.5 h-3.5" />
+                <span>Starlink &amp; Solar (.pdf)</span>
+              </a>
+              <a
+                href="./assets/portfolio/documentation-support-sop.pdf"
+                target="_blank"
+                rel="noreferrer"
+                className="btn-ghost inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-medium bg-white/5 border border-white/15 text-slate-200"
+              >
+                <Icon name="file-text" className="w-3.5 h-3.5" />
+                <span>Support SOP (.pdf)</span>
+              </a>
+              <a
+                href="https://github.com/CaptLeviticus/ai-job-scraper"
+                target="_blank"
+                rel="noreferrer"
+                className="btn-ghost inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-medium bg-white/5 border border-white/15 text-slate-200"
+              >
+                <Icon name="code" className="w-3.5 h-3.5" />
+                <span>GitHub Repo</span>
+              </a>
+            </div>
+          </div>
+
+          <p className="text-sm text-slate-300 mb-8 max-w-3xl leading-relaxed">
+            Live interactive telemetry simulator modeling environmental monitoring stations (water quality, weather, Starlink telemetry) deployed during field operations. Adjust the live metrics to test real-time threshold alarms:
+          </p>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+            {/* Water Temp */}
+            <div className="bg-black/40 border border-white/10 rounded-2xl p-5">
+              <div className="flex justify-between items-center mb-3">
+                <span className="text-xs font-medium text-slate-300">Water Temperature</span>
+                <span className="text-xs font-mono font-bold text-emerald-400">{temp}°C</span>
+              </div>
+              <input
+                type="range"
+                min="10"
+                max="45"
+                step="0.2"
+                value={temp}
+                onChange={(e) => setTemp(Number(e.target.value))}
+                className="w-full accent-emerald-500 cursor-pointer"
+              />
+              <span className="text-[10px] text-slate-400 mt-2 block">Normal Range: 15°C – 32°C</span>
+            </div>
+
+            {/* pH Level */}
+            <div className="bg-black/40 border border-white/10 rounded-2xl p-5">
+              <div className="flex justify-between items-center mb-3">
+                <span className="text-xs font-medium text-slate-300">pH Level</span>
+                <span className={`text-xs font-mono font-bold ${isPhOk ? "text-emerald-400" : "text-rose-400"}`}>
+                  {ph} pH
+                </span>
+              </div>
+              <input
+                type="range"
+                min="4"
+                max="11"
+                step="0.1"
+                value={ph}
+                onChange={(e) => setPh(Number(e.target.value))}
+                className="w-full accent-emerald-500 cursor-pointer"
+              />
+              <span className="text-[10px] text-slate-400 mt-2 block">Standard Tolerance: 6.5 – 8.5</span>
+            </div>
+
+            {/* Turbidity */}
+            <div className="bg-black/40 border border-white/10 rounded-2xl p-5">
+              <div className="flex justify-between items-center mb-3">
+                <span className="text-xs font-medium text-slate-300">Turbidity (NTU)</span>
+                <span className={`text-xs font-mono font-bold ${isTurbidityOk ? "text-emerald-400" : "text-amber-400"}`}>
+                  {turbidity} NTU
+                </span>
+              </div>
+              <input
+                type="range"
+                min="0"
+                max="15"
+                step="0.1"
+                value={turbidity}
+                onChange={(e) => setTurbidity(Number(e.target.value))}
+                className="w-full accent-emerald-500 cursor-pointer"
+              />
+              <span className="text-[10px] text-slate-400 mt-2 block">Acceptable: ≤ 5.0 NTU</span>
+            </div>
+          </div>
+
+          <div className={`p-4 rounded-2xl border flex items-center justify-between text-xs ${
+            isSystemNormal
+              ? "bg-emerald-500/10 border-emerald-500/30 text-emerald-300"
+              : "bg-amber-500/10 border-amber-500/30 text-amber-300"
+          }`}>
+            <div className="flex items-center gap-2">
+              <span className={`w-2.5 h-2.5 rounded-full ${isSystemNormal ? "bg-emerald-400" : "bg-amber-400 animate-ping"}`}></span>
+              <span>
+                {isSystemNormal
+                  ? "Telemetry Stream Optimal: All parameters within safe environmental thresholds."
+                  : "Telemetry Alert Triggered: Out-of-bounds parameter detected. SOP troubleshooting recommended."}
+              </span>
+            </div>
+            <span className="font-mono text-[10px]">PARSER STATUS: ACTIVE</span>
+          </div>
+        </div>
+      );
+    }
+
+    /* 4. Multimodal Video Taxonomy Workbench */
+    function VideoTaxonomyWorkbench() {
+      const [selectedAction, setSelectedAction] = useState("cut-02");
+      const [qaConfirmed, setQaConfirmed] = useState(true);
+
+      const segments = [
+        {
+          id: "cut-01",
+          time: "00:02.100 - 00:05.450",
+          action: "Pick up wrench from tray",
+          env: "Industrial Workshop",
+          dexterity: "Right Hand / High Precision",
+          boundaryQA: "Clean"
+        },
+        {
+          id: "cut-02",
+          time: "00:05.450 - 00:09.800",
+          action: "Fasten flange bolt clockwise",
+          env: "Industrial Workshop",
+          dexterity: "Bimanual Coordination",
+          boundaryQA: "Clean"
+        },
+        {
+          id: "cut-03",
+          time: "00:09.800 - 00:13.150",
+          action: "Inspect torque gauge reading",
+          env: "Industrial Workshop",
+          dexterity: "Visual Inspection",
+          boundaryQA: "Clean"
+        }
+      ];
+
+      const current = segments.find(s => s.id === selectedAction) || segments[0];
+
+      return (
+        <div id="video-workbench" className="bg-[#0b101b] border border-white/10 rounded-3xl p-6 sm:p-10 mb-16 scroll-mt-28">
+          <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-6 border-b border-white/10">
+            <div>
+              <span className="text-xs font-mono uppercase tracking-wider text-emerald-400">Workbench 04 • Live Taxonomy</span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white mt-1 font-display">
+                Multimodal Video Action Segmentation Studio
+              </h2>
+            </div>
+            <a
+              href="./assets/portfolio/process-flow.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="btn-lumina inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold bg-emerald-500 text-slate-950"
+            >
+              <Icon name="file-text" className="w-3.5 h-3.5" />
+              <span>Workflow Process Flow (.pdf)</span>
+            </a>
+          </div>
+
+          <p className="text-sm text-slate-300 mb-8 max-w-3xl leading-relaxed">
+            Models the embodied AI robotics dataset curation workflow executed at Frodobots. Raw video streams are cut into discrete action segments and tagged across an 8-dimensional hierarchical taxonomy:
+          </p>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-6">
+            {/* Segment Selector */}
+            <div className="lg:col-span-5 space-y-3">
+              <span className="text-xs font-mono uppercase tracking-wider text-slate-400 block mb-2">Video Action Segments</span>
+              {segments.map((seg) => (
+                <button
+                  key={seg.id}
+                  onClick={() => setSelectedAction(seg.id)}
+                  className={`w-full text-left p-4 rounded-xl border transition ${
+                    selectedAction === seg.id
+                      ? "bg-emerald-500/15 border-emerald-500/40 text-white"
+                      : "bg-black/30 border-white/10 text-slate-300 hover:bg-white/5"
+                  }`}
+                >
+                  <div className="flex items-center justify-between text-xs font-mono text-emerald-400 mb-1">
+                    <span>{seg.id.toUpperCase()}</span>
+                    <span>{seg.time}</span>
+                  </div>
+                  <div className="text-sm font-semibold text-white">{seg.action}</div>
+                  <div className="text-[11px] text-slate-400 mt-1 flex items-center gap-2">
+                    <span>{seg.env}</span>
+                    <span>•</span>
+                    <span>{seg.dexterity}</span>
+                  </div>
+                </button>
+              ))}
+            </div>
+
+            {/* Taxonomy Metadata Viewer */}
+            <div className="lg:col-span-7 bg-black/50 border border-white/10 rounded-2xl p-6">
+              <span className="text-xs font-mono uppercase tracking-wider text-emerald-400 block mb-4">
+                8-Layer Taxonomy Classification
+              </span>
+
+              <div className="grid grid-cols-2 gap-4 text-xs font-mono mb-6">
+                <div className="bg-white/[0.02] p-3 rounded-lg border border-white/5">
+                  <span className="text-[10px] text-slate-400 block">01. Environment</span>
+                  <span className="text-slate-100 font-semibold">{current.env}</span>
+                </div>
+                <div className="bg-white/[0.02] p-3 rounded-lg border border-white/5">
+                  <span className="text-[10px] text-slate-400 block">02. Scene / Venue</span>
+                  <span className="text-slate-100 font-semibold">Assembly Workstation B</span>
+                </div>
+                <div className="bg-white/[0.02] p-3 rounded-lg border border-white/5">
+                  <span className="text-[10px] text-slate-400 block">03. Task Category</span>
+                  <span className="text-slate-100 font-semibold">Mechanical Assembly</span>
+                </div>
+                <div className="bg-white/[0.02] p-3 rounded-lg border border-white/5">
+                  <span className="text-[10px] text-slate-400 block">04. Specific Action</span>
+                  <span className="text-slate-100 font-semibold">{current.action}</span>
+                </div>
+                <div className="bg-white/[0.02] p-3 rounded-lg border border-white/5">
+                  <span className="text-[10px] text-slate-400 block">05. Dexterity</span>
+                  <span className="text-slate-100 font-semibold">{current.dexterity}</span>
+                </div>
+                <div className="bg-white/[0.02] p-3 rounded-lg border border-white/5">
+                  <span className="text-[10px] text-slate-400 block">06. Lighting Condition</span>
+                  <span className="text-slate-100 font-semibold">Overhead Diffused 5000K</span>
+                </div>
+              </div>
+
+              <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs">
+                <label className="flex items-center gap-2 text-slate-300 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={qaConfirmed}
+                    onChange={(e) => setQaConfirmed(e.target.checked)}
+                    className="accent-emerald-500 rounded"
+                  />
+                  <span>Peer QA Boundary Audit Confirmed</span>
+                </label>
+                <span className="text-emerald-400 font-mono text-[11px]">SLA ACCURACY: 99.4%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    /* 5. Complete Download Center */
+    function DownloadCenter() {
+      const files = [
+        {
+          name: "QA/QC Inspection Logs",
+          file: "qa-qc-logs.xlsx",
+          type: "Excel Workbook (.xlsx)",
+          url: "./assets/portfolio/qa-qc-logs.xlsx",
+          desc: "Automated QA deductions, AHT metrics, and daily quota pass/fail status."
+        },
+        {
+          name: "Installation Asset Tracker",
+          file: "installation-assest-tracker.xlsx",
+          type: "Excel Workbook (.xlsx)",
+          url: "./assets/portfolio/installation-assest-tracker.xlsx",
+          desc: "Complete hardware and deployment inventory tracker with status indicators."
+        },
+        {
+          name: "Vendor Comparison Matrix",
+          file: "vendor-comparison.xlsx",
+          type: "Excel Workbook (.xlsx)",
+          url: "./assets/portfolio/vendor-comparison.xlsx",
+          desc: "Multi-parameter vendor feature scoring and quotation evaluation model."
+        },
+        {
+          name: "LLM QA Plan & Audit Log",
+          file: "qa-plan-and-log.pdf",
+          type: "Technical PDF (.pdf)",
+          url: "./assets/portfolio/qa-plan-and-log.pdf",
+          desc: "Evaluation protocols, rubric definitions, and grounding audit logs."
+        },
+        {
+          name: "QC Verification Checklist",
+          file: "qc-checklist.pdf",
+          type: "Technical PDF (.pdf)",
+          url: "./assets/portfolio/qc-checklist.pdf",
+          desc: "Step-by-step checklist for multimodal data and hallucination inspection."
+        },
+        {
+          name: "Starlink & Solar Guide",
+          file: "starlink-solar-installation-guide.pdf",
+          type: "Technical PDF (.pdf)",
+          url: "./assets/portfolio/starlink-solar-installation-guide.pdf",
+          desc: "Full hardware installation, solar PV sizing, and satellite network SOP."
+        },
+        {
+          name: "Technical Support SOP",
+          file: "documentation-support-sop.pdf",
+          type: "Technical PDF (.pdf)",
+          url: "./assets/portfolio/documentation-support-sop.pdf",
+          desc: "Standard operating procedures for sensor calibration and client ticketing."
+        },
+        {
+          name: "Workflow Process Flow",
+          file: "process-flow.pdf",
+          type: "Technical PDF (.pdf)",
+          url: "./assets/portfolio/process-flow.pdf",
+          desc: "Architectural process diagram for video action cutting and peer QA."
+        }
+      ];
+
+      return (
+        <section className="bg-gradient-to-b from-[#0b101b] to-[#07090e] border border-white/10 rounded-3xl p-8 sm:p-12 mb-20">
+          <div className="max-w-2xl mb-10">
+            <span className="text-xs font-mono uppercase tracking-wider text-emerald-400">Download Center</span>
+            <h2 className="text-3xl font-bold text-white mt-2 font-display">
+              Production Work Samples &amp; Files
+            </h2>
+            <p className="text-sm text-slate-300 mt-2">
+              Every sample below is a real production document or workbook from my repository ready for instant review:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {files.map((f, idx) => (
+              <div key={idx} className="bg-black/40 border border-white/10 rounded-2xl p-5 flex flex-col justify-between hover:border-emerald-500/40 transition">
+                <div>
+                  <span className="text-[10px] font-mono text-emerald-400 px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20 inline-block mb-3">
+                    {f.type}
+                  </span>
+                  <h3 className="text-sm font-semibold text-white mb-2">{f.name}</h3>
+                  <p className="text-xs text-slate-400 leading-relaxed mb-4">{f.desc}</p>
+                </div>
+                <a
+                  href={f.url}
+                  download
+                  className="btn-ghost inline-flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl text-xs font-medium text-slate-200 bg-white/5 border border-white/15 hover:bg-emerald-500 hover:text-slate-950 hover:border-emerald-500 transition"
+                >
+                  <Icon name="download" className="w-3.5 h-3.5" />
+                  <span>Download File</span>
+                </a>
+              </div>
+            ))}
+          </div>
+        </section>
+      );
+    }
+
+    function WorkbenchesPage() {
+      return (
+        <div className="min-h-screen agency-mesh agency-grid">
+          <Navbar active="workbenches" />
+
+          <main className="pt-36 sm:pt-44 pb-24 px-4 sm:px-6 max-w-6xl mx-auto">
+            {/* Header */}
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-medium mb-6">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>Playable Workbenches &amp; Proof</span>
+              </div>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 font-display">
+                Interactive <span className="font-editorial text-emerald-400">Workbenches</span> &amp; Deliverables.
+              </h1>
+              <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+                Test my live simulators below for AHT calculations, LLM grounding audits, sensor telemetry alarms, and multimodal video taxonomy tagging — or download the actual production files directly.
+              </p>
+            </div>
+
+            {/* Quick Jumper Bar */}
+            <div className="flex flex-wrap items-center justify-center gap-2 mb-16 text-xs">
+              <a href="#spreadsheet-workbench" className="px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-slate-300 hover:text-white hover:border-emerald-500/40 transition">
+                01. AHT Spreadsheet
+              </a>
+              <a href="#llm-workbench" className="px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-slate-300 hover:text-white hover:border-emerald-500/40 transition">
+                02. LLM Hallucination Auditor
+              </a>
+              <a href="#sensor-workbench" className="px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-slate-300 hover:text-white hover:border-emerald-500/40 transition">
+                03. Telemetry Parser
+              </a>
+              <a href="#video-workbench" className="px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-slate-300 hover:text-white hover:border-emerald-500/40 transition">
+                04. Video Taxonomy
+              </a>
+            </div>
+
+            {/* Workbenches */}
+            <SpreadsheetWorkbench />
+            <LlmAuditorWorkbench />
+            <SensorParserWorkbench />
+            <VideoTaxonomyWorkbench />
+
+            {/* Download Center */}
+            <DownloadCenter />
+
+            {/* CTA */}
+            <div className="text-center bg-[#0d121e] border border-white/10 rounded-3xl p-10 sm:p-14 relative overflow-hidden">
+              <h2 className="text-3xl font-bold text-white mb-4 font-display">
+                Need a custom workbench or spreadsheet built?
+              </h2>
+              <p className="text-slate-300 text-sm max-w-lg mx-auto mb-8">
+                I can design and deliver self-calculating sheets, QA pipelines, and web utilities tailored to your exact team guidelines.
+              </p>
+              <div className="flex flex-wrap justify-center gap-4">
+                <a
+                  href="contact.html"
+                  className="btn-lumina inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-emerald-400 text-slate-950 font-semibold px-6 py-3.5 rounded-full text-sm shadow-xl shadow-emerald-500/20"
+                >
+                  <span>Request an Automation</span>
+                  <Icon name="arrow-right" className="w-4 h-4" />
+                </a>
+                <a
+                  href="experiences.html"
+                  className="btn-ghost inline-flex items-center gap-2 bg-white/5 border border-white/15 text-white font-medium px-6 py-3.5 rounded-full text-sm hover:bg-white/10"
+                >
+                  <span>View Career Timeline</span>
+                </a>
+              </div>
+            </div>
+          </main>
+
+          {/* Footer */}
+          <footer className="border-t border-white/10 py-12 px-4 sm:px-6 bg-[#04060a]">
+            <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-slate-400">
+              <div className="flex items-center gap-3">
+                <img src={DATA.profile.avatarUrl} alt="" className="w-6 h-6 rounded-full object-cover" />
+                <span>&copy; {new Date().getFullYear()} {DATA.profile.name}. All rights reserved.</span>
+              </div>
+              <div className="flex items-center gap-6">
+                <a href="index.html" className="hover:text-emerald-400 transition">Home</a>
+                <a href="services.html" className="hover:text-emerald-400 transition">Services</a>
+                <a href="workbenches.html" className="text-emerald-400 font-medium">Workbenches</a>
+                <a href="experiences.html" className="hover:text-emerald-400 transition">Experiences</a>
+                <a href="credentials.html" className="hover:text-emerald-400 transition">Credentials</a>
+                <a href="contact.html" className="hover:text-emerald-400 transition">Contact</a>
+              </div>
+            </div>
+          </footer>
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<WorkbenchesPage />);
+  </script>
+</body>
+</html>
