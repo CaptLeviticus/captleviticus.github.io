@@ -3,25 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Levie Andrew Cruz Lameyra | AI Data, Automation &amp; Technical Specialist</title>
+  <title>Levie Andrew Cruz Lameyra | AI Data Specialist &amp; Automation Architect</title>
   <meta
     name="description"
-    content="Official portfolio of Levie Andrew Cruz Lameyra (CaptLeviticus) — AI Data Annotator, LLM QA Analyst, Spreadsheet & AI Automation Specialist, and Technical Specialist."
+    content="Official portfolio of Levie Andrew Cruz Lameyra (CaptLeviticus) — AI Data Annotator, LLM QA Analyst, Spreadsheet & AI Automation Specialist."
   />
-  <!-- OpenGraph / Social Sharing Meta -->
   <meta property="og:title" content="Levie Andrew Cruz Lameyra — AI Data & Automation Portfolio" />
   <meta
     property="og:description"
-    content="Explore interactive mock samples in AI Workflow Automation, Google Sheets AHT/QA Dashboards, AI-Assisted Programming, and Multimodal AI Data QA."
+    content="The multimodal AI specialist for teams that demand flawless data, strict rubric compliance, and intelligent workflow automations."
   />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://captleviticus.github.io" />
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Inter, Plus Jakarta Sans, Newsreader (Luxury Editorial Italic), JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500;1,6..72,600;1,6..72,700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
     rel="stylesheet"
   />
 
@@ -35,7 +34,17 @@
           fontFamily: {
             sans: ['Inter', 'system-ui', 'sans-serif'],
             display: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+            serif: ['Newsreader', 'Georgia', 'serif'],
             mono: ['JetBrains Mono', 'monospace']
+          },
+          colors: {
+            brand: {
+              emerald: '#10b981',
+              neon: '#34d399',
+              dark: '#07090e',
+              card: '#0d111a',
+              border: 'rgba(255, 255, 255, 0.08)'
+            }
           }
         }
       }
@@ -54,27 +63,65 @@
     body {
       font-family: 'Inter', system-ui, sans-serif;
     }
-    h1, h2, h3, h4, .font-display {
+    .font-display {
       font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
     }
-    .grid-bg {
-      background-size: 36px 36px;
-      background-image:
-        linear-gradient(to right, rgba(148, 163, 184, 0.08) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+    .font-editorial {
+      font-family: 'Newsreader', Georgia, serif;
+      font-style: italic;
     }
-    .btn-interactive {
+    /* Lumina-style Ambient Mesh & Grid Background */
+    .agency-mesh {
+      background-color: #06080e;
+      background-image:
+        radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 85% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 15% 45%, rgba(16, 185, 129, 0.06) 0%, transparent 40%);
+    }
+    .agency-grid {
+      background-size: 48px 48px;
+      background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+    /* Lumina Pill Navbar Glow */
+    .pill-navbar {
+      background: rgba(10, 14, 22, 0.78);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+    }
+    /* Lumina Button Micro-Interactions */
+    .btn-lumina {
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-lumina:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.35);
+    }
+    .btn-lumina:active {
+      transform: translateY(0px) scale(0.98);
+    }
+    .btn-ghost {
       transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .btn-interactive:hover {
+    .btn-ghost:hover {
       transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.25);
     }
-    .btn-interactive:active {
-      transform: translateY(0px) scale(0.98);
+    /* Horizontal Carousel Scrollbar Hide */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
     }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-900 dark:bg-[#090d16] dark:text-slate-100 antialiased selection:bg-blue-600 selection:text-white transition-colors duration-300">
+<body class="agency-mesh agency-grid text-slate-100 antialiased selection:bg-emerald-500 selection:text-slate-950 min-h-screen flex flex-col">
   <div id="root"></div>
 
   <script type="text/babel">
@@ -83,17 +130,62 @@
     // ========================================================================
     // SVG ICON COMPONENT
     // ========================================================================
-    function Icon({ name, className = "w-5 h-5" }) {
+    function Icon({ name, className = "w-4 h-4" }) {
       const icons = {
-        sun: (
-          <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-            <circle cx="12" cy="12" r="4" />
-            <path strokeLinecap="round" d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41" />
+        star: (
+          <svg className={className} viewBox="0 0 20 20" fill="currentColor">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
           </svg>
         ),
-        moon: (
+        arrowDown: (
           <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        ),
+        arrowRight: (
+          <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        ),
+        play: (
+          <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        ),
+        check: (
+          <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+        ),
+        copy: (
+          <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
+            <rect x="9" y="9" width="13" height="13" rx="2" />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
+          </svg>
+        ),
+        download: (
+          <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" />
+          </svg>
+        ),
+        external: (
+          <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        ),
+        close: (
+          <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        ),
+        github: (
+          <svg className={className} fill="currentColor" viewBox="0 0 24 24">
+            <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+          </svg>
+        ),
+        linkedin: (
+          <svg className={className} fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
           </svg>
         ),
         bot: (
@@ -113,42 +205,16 @@
             <path strokeLinecap="round" strokeLinejoin="round" d="M16 18l6-6-6-6M8 6l-6 6 6 6" />
           </svg>
         ),
-        "check-circle": (
+        video: (
           <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-        ),
-        cpu: (
-          <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
-            <rect x="6" y="6" width="12" height="12" rx="2" />
-            <path strokeLinecap="round" d="M9 3v3m6-3v3M9 18v3m6-3v3M3 9h3m-3 6h3m12-6h3m-3 6h3" />
-          </svg>
-        ),
-        sparkles: (
-          <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-          </svg>
-        ),
-        "shield-check": (
-          <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-          </svg>
-        ),
-        layers: (
-          <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+            <rect x="2" y="4" width="15" height="16" rx="2" />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M17 9l5-3v12l-5-3V9z" />
           </svg>
         ),
         award: (
           <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
             <circle cx="12" cy="8" r="6" />
             <path strokeLinecap="round" strokeLinejoin="round" d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11" />
-          </svg>
-        ),
-        briefcase: (
-          <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
-            <rect x="2" y="7" width="20" height="14" rx="2" />
-            <path strokeLinecap="round" strokeLinejoin="round" d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" />
           </svg>
         ),
         mail: (
@@ -161,40 +227,9 @@
           <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
             <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
           </svg>
-        ),
-        copy: (
-          <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
-            <rect x="9" y="9" width="13" height="13" rx="2" />
-            <path strokeLinecap="round" strokeLinejoin="round" d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
-          </svg>
-        ),
-        external: (
-          <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-          </svg>
-        ),
-        download: (
-          <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" />
-          </svg>
-        ),
-        play: (
-          <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-            <polygon points="5 3 19 12 5 21 5 3" />
-          </svg>
-        ),
-        close: (
-          <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        ),
-        github: (
-          <svg className={className} fill="currentColor" viewBox="0 0 24 24">
-            <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
-          </svg>
         )
       };
-      return icons[name] || icons["sparkles"];
+      return icons[name] || icons["play"];
     }
 
     // ========================================================================
@@ -269,18 +304,16 @@
 
       return (
         <div className="space-y-5">
-          {/* Top Formula Bar */}
-          <div className="flex flex-wrap items-center gap-2 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl px-3.5 py-2.5 text-xs font-mono">
-            <span className="px-2 py-0.5 rounded bg-emerald-600 text-white font-semibold">fx</span>
-            <span className="text-slate-600 dark:text-slate-300 break-all">{activeFormula}</span>
+          <div className="flex flex-wrap items-center gap-2 bg-[#090d16] border border-white/10 rounded-xl px-3.5 py-2.5 text-xs font-mono">
+            <span className="px-2 py-0.5 rounded bg-emerald-500 text-slate-950 font-bold">fx</span>
+            <span className="text-emerald-400 break-all">{activeFormula}</span>
           </div>
 
-          {/* Interactive SLA Controls */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-slate-50 dark:bg-slate-900/60 p-4 rounded-xl border border-slate-200 dark:border-slate-800">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-[#0d121e]/80 p-4 rounded-xl border border-white/10">
             <div>
               <div className="flex justify-between text-xs font-semibold mb-1.5">
-                <span className="text-slate-600 dark:text-slate-300">Target Max AHT Threshold (Seconds / Task)</span>
-                <span className="font-mono text-blue-600 dark:text-blue-400">{targetAht}s</span>
+                <span className="text-slate-300">Target Max AHT Threshold (Seconds / Task)</span>
+                <span className="font-mono text-emerald-400">{targetAht}s</span>
               </div>
               <input
                 type="range"
@@ -288,13 +321,13 @@
                 max="100"
                 value={targetAht}
                 onChange={e => setTargetAht(Number(e.target.value))}
-                className="w-full accent-blue-600 cursor-pointer"
+                className="w-full accent-emerald-500 cursor-pointer"
               />
             </div>
             <div>
               <div className="flex justify-between text-xs font-semibold mb-1.5">
-                <span className="text-slate-600 dark:text-slate-300">Minimum ISO QA Rubric Accuracy SLA (%)</span>
-                <span className="font-mono text-emerald-600 dark:text-emerald-400">{minQaSla}%</span>
+                <span className="text-slate-300">Minimum ISO QA Rubric Accuracy SLA (%)</span>
+                <span className="font-mono text-emerald-400">{minQaSla}%</span>
               </div>
               <input
                 type="range"
@@ -303,47 +336,45 @@
                 step="0.5"
                 value={minQaSla}
                 onChange={e => setMinQaSla(Number(e.target.value))}
-                className="w-full accent-emerald-600 cursor-pointer"
+                className="w-full accent-emerald-500 cursor-pointer"
               />
             </div>
           </div>
 
-          {/* KPI Summary Strip */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            <div className="p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-              <p className="text-xs text-slate-500">Total Tasks Logged</p>
+            <div className="p-3.5 rounded-xl bg-[#0d121e] border border-white/10">
+              <p className="text-xs text-slate-400">Total Tasks Logged</p>
               <p className="text-xl font-bold font-mono mt-0.5">{totals.totalTasks}</p>
             </div>
-            <div className="p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-              <p className="text-xs text-slate-500">Weighted Avg AHT</p>
-              <p className="text-xl font-bold font-mono text-blue-600 dark:text-blue-400 mt-0.5">{totals.avgAht}s</p>
+            <div className="p-3.5 rounded-xl bg-[#0d121e] border border-white/10">
+              <p className="text-xs text-slate-400">Weighted Avg AHT</p>
+              <p className="text-xl font-bold font-mono text-emerald-400 mt-0.5">{totals.avgAht}s</p>
             </div>
-            <div className="p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-              <p className="text-xs text-slate-500">Net QA Accuracy</p>
-              <p className="text-xl font-bold font-mono text-emerald-600 dark:text-emerald-400 mt-0.5">{totals.avgQa}%</p>
+            <div className="p-3.5 rounded-xl bg-[#0d121e] border border-white/10">
+              <p className="text-xs text-slate-400">Net QA Accuracy</p>
+              <p className="text-xl font-bold font-mono text-emerald-400 mt-0.5">{totals.avgQa}%</p>
             </div>
-            <div className="p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-              <p className="text-xs text-slate-500">Batches Meeting SLA</p>
-              <p className="text-xl font-bold font-mono mt-0.5">{totals.passCount} / {computed.length}</p>
+            <div className="p-3.5 rounded-xl bg-[#0d121e] border border-white/10">
+              <p className="text-xs text-slate-400">Batches Meeting SLA</p>
+              <p className="text-xl font-bold font-mono text-white mt-0.5">{totals.passCount} / {computed.length}</p>
             </div>
           </div>
 
-          {/* Interactive Spreadsheet Table */}
-          <div className="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-800">
+          <div className="overflow-x-auto rounded-xl border border-white/10">
             <table className="w-full text-left border-collapse text-xs sm:text-sm">
               <thead>
-                <tr className="bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-300 border-b border-slate-200 dark:border-slate-800 font-mono text-xs">
-                  <th className="py-2.5 px-3">A: Batch ID</th>
-                  <th className="py-2.5 px-3">B: Workflow Modality</th>
-                  <th className="py-2.5 px-3">C: Tasks (Edit)</th>
-                  <th className="py-2.5 px-3">D: Mins (Edit)</th>
-                  <th className="py-2.5 px-3">E: Errors (Edit)</th>
-                  <th className="py-2.5 px-3">F: Auto AHT</th>
-                  <th className="py-2.5 px-3">G: QA Score</th>
-                  <th className="py-2.5 px-3">H: Auto SLA Status</th>
+                <tr className="bg-[#090d16] text-slate-300 border-b border-white/10 font-mono text-xs">
+                  <th className="py-2.5 px-3">Batch ID</th>
+                  <th className="py-2.5 px-3">Workflow Modality</th>
+                  <th className="py-2.5 px-3">Tasks (Edit)</th>
+                  <th className="py-2.5 px-3">Mins (Edit)</th>
+                  <th className="py-2.5 px-3">Errors (Edit)</th>
+                  <th className="py-2.5 px-3">Auto AHT</th>
+                  <th className="py-2.5 px-3">QA Score</th>
+                  <th className="py-2.5 px-3">SLA Status</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-200 dark:divide-slate-800 bg-white dark:bg-slate-950">
+              <tbody className="divide-y divide-white/10 bg-[#070a12]">
                 {computed.map((row, idx) => (
                   <tr
                     key={row.id}
@@ -352,16 +383,16 @@
                         `=IF(AND(F${idx + 2}<=${targetAht}, G${idx + 2}>=${minQaSla}%), "SLA OPTIMAL", IF(G${idx + 2}<${minQaSla}%, "QA AUDIT REQ", "AHT REVIEW"))`
                       )
                     }
-                    className="hover:bg-blue-50/50 dark:hover:bg-slate-900/60 transition cursor-pointer"
+                    className="hover:bg-white/5 transition cursor-pointer"
                   >
-                    <td className="py-2.5 px-3 font-mono font-semibold text-xs">{row.id}</td>
-                    <td className="py-2.5 px-3 font-medium">{row.modality}</td>
+                    <td className="py-2.5 px-3 font-mono font-semibold text-xs text-emerald-400">{row.id}</td>
+                    <td className="py-2.5 px-3 font-medium text-slate-200">{row.modality}</td>
                     <td className="py-2 px-3">
                       <input
                         type="number"
                         value={row.tasks}
                         onChange={e => updateRow(idx, "tasks", e.target.value)}
-                        className="w-16 px-2 py-1 rounded border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 font-mono text-xs"
+                        className="w-16 px-2 py-1 rounded border border-white/20 bg-[#0c101a] font-mono text-xs text-white"
                       />
                     </td>
                     <td className="py-2 px-3">
@@ -369,7 +400,7 @@
                         type="number"
                         value={row.minutes}
                         onChange={e => updateRow(idx, "minutes", e.target.value)}
-                        className="w-16 px-2 py-1 rounded border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 font-mono text-xs"
+                        className="w-16 px-2 py-1 rounded border border-white/20 bg-[#0c101a] font-mono text-xs text-white"
                       />
                     </td>
                     <td className="py-2 px-3">
@@ -377,23 +408,23 @@
                         type="number"
                         value={row.errors}
                         onChange={e => updateRow(idx, "errors", e.target.value)}
-                        className="w-14 px-2 py-1 rounded border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-900 font-mono text-xs"
+                        className="w-14 px-2 py-1 rounded border border-white/20 bg-[#0c101a] font-mono text-xs text-white"
                       />
                     </td>
-                    <td className={`py-2.5 px-3 font-mono font-semibold ${row.ahtPass ? "text-slate-800 dark:text-slate-200" : "text-amber-600 dark:text-amber-400"}`}>
+                    <td className={`py-2.5 px-3 font-mono font-semibold ${row.ahtPass ? "text-slate-200" : "text-amber-400"}`}>
                       {row.ahtSec}s
                     </td>
-                    <td className={`py-2.5 px-3 font-mono font-semibold ${row.qaPass ? "text-emerald-600 dark:text-emerald-400" : "text-rose-600 dark:text-rose-400"}`}>
+                    <td className={`py-2.5 px-3 font-mono font-semibold ${row.qaPass ? "text-emerald-400" : "text-rose-400"}`}>
                       {row.qaScore}%
                     </td>
                     <td className="py-2.5 px-3">
                       <span
                         className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-semibold font-mono ${
                           row.status === "SLA OPTIMAL"
-                            ? "bg-emerald-100 text-emerald-800 dark:bg-emerald-950/80 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800"
+                            ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30"
                             : row.status === "AHT REVIEW"
-                            ? "bg-amber-100 text-amber-800 dark:bg-amber-950/80 dark:text-amber-300 border border-amber-300 dark:border-amber-800"
-                            : "bg-rose-100 text-rose-800 dark:bg-rose-950/80 dark:text-rose-300 border border-rose-300 dark:border-rose-800"
+                            ? "bg-amber-500/20 text-amber-300 border border-amber-500/30"
+                            : "bg-rose-500/20 text-rose-300 border border-rose-500/30"
                         }`}
                       >
                         {row.status}
@@ -405,19 +436,18 @@
             </table>
           </div>
 
-          {/* Bottom Actions */}
           <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
             <button
               onClick={addSampleRow}
-              className="btn-interactive px-4 py-2 rounded-lg text-xs font-semibold bg-slate-200 hover:bg-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-100"
+              className="px-4 py-2 rounded-full text-xs font-semibold bg-white/10 hover:bg-white/20 text-white transition"
             >
               + Add Batch Row
             </button>
             <button
               onClick={exportCsv}
-              className="btn-interactive inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-semibold bg-emerald-600 hover:bg-emerald-500 text-white shadow"
+              className="btn-lumina inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold bg-emerald-400 hover:bg-emerald-300 text-slate-950 shadow"
             >
-              <Icon name="download" className="w-4 h-4" />
+              <Icon name="download" className="w-3.5 h-3.5" />
               Export Calculated CSV Report
             </button>
           </div>
@@ -432,20 +462,19 @@
       const scenarios = [
         {
           id: "sensor-sop",
-          title: "Scenario 1: Environmental Sensor Calibration SOP Grounding",
+          title: "Scenario 1: Sensor Calibration SOP Grounding",
           sourceText:
             "SOURCE DOCUMENT (ISO-SOP-402): The multiparameter water quality probe must be calibrated every 14 days using standard pH 4.01, 7.00, and 10.01 buffer solutions. Operating temperature range is -5°C to 50°C. Telemetry uploads occur every 15 minutes via cellular gateway.",
           prompt: "Summarize the calibration frequency, required pH buffers, and upload interval for the water quality probe.",
           modelA: {
             text: "According to ISO-SOP-402, the multiparameter probe requires calibration every 14 days using pH 4.01, 7.00, and 10.01 buffers. Telemetry is transmitted every 15 minutes via cellular gateway.",
             grounding: "100% Grounded • 0 Hallucinations",
-            hallucinatedClaim: null,
             score: 98
           },
           modelB: {
             text: "The water quality probe must be calibrated every 30 days using pH 6.0 and 8.0 buffers, and uploads data every 5 minutes via satellite link.",
-            grounding: "Failed Grounding • 3 Factual Hallucinations Detected",
-            hallucinatedClaim: "Fabricated '30 days' (source says 14 days), 'pH 6.0/8.0' (source says 4.01, 7.00, 10.01), and 'satellite link' (source says cellular gateway).",
+            grounding: "Failed Grounding • 3 Factual Hallucinations",
+            hallucinatedClaim: "Fabricated '30 days' (vs 14 days), 'pH 6.0/8.0' (vs 4.01, 7.00, 10.01), and 'satellite link' (vs cellular gateway).",
             score: 32
           }
         },
@@ -458,22 +487,19 @@
           modelA: {
             text: "In Clip #084 (Domestic Kitchen, Overhead Warm LED), the action starts at 00:02.1 with a right-hand precision pinch-grasp of the ceramic mug, lifting it 15cm, and concludes at 00:05.8 upon placement on the wooden coaster.",
             grounding: "100% Grounded • Frame-Accurate",
-            hallucinatedClaim: null,
             score: 99
           },
           modelB: {
             text: "The operator uses both hands to pick up a glass tumbler at 00:00.5 and places it inside the kitchen sink at 00:08.0 under natural sunlight.",
             grounding: "Failed Grounding • Severe Modality Hallucination",
-            hallucinatedClaim: "Incorrect object ('glass tumbler' vs 'ceramic mug'), dexterity ('both hands' vs 'right hand'), timestamps, and lighting ('sunlight' vs 'Overhead Warm LED').",
+            hallucinatedClaim: "Wrong object ('glass tumbler' vs 'ceramic mug'), dexterity ('both hands' vs 'right hand'), and lighting ('sunlight' vs 'Overhead Warm LED').",
             score: 18
           }
         }
       ];
 
       const [scenarioIdx, setScenarioIdx] = useState(0);
-      const [selectedWinner, setSelectedWinner] = useState("Model A (Strictly Grounded)");
       const [copiedJson, setCopiedJson] = useState(false);
-
       const current = scenarios[scenarioIdx];
 
       const rlhfPayload = useMemo(() => {
@@ -482,35 +508,28 @@
             audit_id: `RLHF-QA-${scenarioIdx + 101}`,
             auditor: "Levie Andrew Cruz Lameyra",
             scenario: current.id,
-            preferred_response: selectedWinner,
+            preferred_response: "Model A (Strictly Grounded)",
             model_a_score: current.modelA.score,
             model_b_score: current.modelB.score,
-            hallucination_flag: true,
+            hallucination_detected: true,
             audit_notes: current.modelB.hallucinatedClaim
           },
           null,
           2
         );
-      }, [scenarioIdx, selectedWinner, current]);
-
-      const copyJson = () => {
-        navigator.clipboard.writeText(rlhfPayload);
-        setCopiedJson(true);
-        setTimeout(() => setCopiedJson(false), 2000);
-      };
+      }, [scenarioIdx, current]);
 
       return (
         <div className="space-y-5">
-          {/* Scenario Selector */}
           <div className="flex flex-wrap gap-2">
             {scenarios.map((sc, idx) => (
               <button
                 key={sc.id}
                 onClick={() => setScenarioIdx(idx)}
-                className={`px-3.5 py-2 rounded-lg text-xs font-semibold transition ${
+                className={`px-4 py-2 rounded-full text-xs font-semibold transition ${
                   scenarioIdx === idx
-                    ? "bg-blue-600 text-white shadow"
-                    : "bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200"
+                    ? "bg-emerald-400 text-slate-950 font-bold shadow-lg shadow-emerald-500/20"
+                    : "bg-white/10 text-slate-300 hover:bg-white/15"
                 }`}
               >
                 {sc.title}
@@ -518,63 +537,58 @@
             ))}
           </div>
 
-          {/* Ground Truth Box */}
-          <div className="p-4 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 space-y-2">
-            <p className="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">
+          <div className="p-4 rounded-xl bg-[#0a0e18] border border-white/10 space-y-2">
+            <p className="text-xs font-mono uppercase tracking-wider text-emerald-400 font-bold">
               Ground Truth Reference Context
             </p>
-            <p className="text-xs sm:text-sm font-mono text-slate-700 dark:text-slate-300">{current.sourceText}</p>
-            <p className="text-xs text-slate-500 pt-1">
+            <p className="text-xs sm:text-sm font-mono text-slate-300">{current.sourceText}</p>
+            <p className="text-xs text-slate-400 pt-1">
               <strong>Prompt:</strong> "{current.prompt}"
             </p>
           </div>
 
-          {/* Side-by-Side Model Comparison */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {/* Model A */}
-            <div className="p-4 rounded-xl border-2 border-emerald-500/60 bg-emerald-50/30 dark:bg-emerald-950/20 space-y-3">
+            <div className="p-4 rounded-xl border border-emerald-500/50 bg-emerald-950/20 space-y-3">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400">
+                <span className="text-xs font-mono font-bold uppercase text-emerald-400">
                   Response A • Verified
                 </span>
-                <span className="px-2.5 py-0.5 rounded-full text-xs font-mono font-bold bg-emerald-600 text-white">
-                  Rubric: {current.modelA.score}/100
+                <span className="px-2.5 py-0.5 rounded-full text-xs font-mono font-bold bg-emerald-500 text-slate-950">
+                  Score: {current.modelA.score}/100
                 </span>
               </div>
-              <p className="text-xs sm:text-sm text-slate-800 dark:text-slate-200 leading-relaxed">
-                {current.modelA.text}
-              </p>
-              <div className="p-2.5 rounded-lg bg-emerald-100/80 dark:bg-emerald-950/60 text-xs text-emerald-800 dark:text-emerald-300 font-medium">
+              <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">{current.modelA.text}</p>
+              <div className="p-2.5 rounded-lg bg-emerald-500/10 text-xs text-emerald-300 font-medium">
                 ✓ {current.modelA.grounding}
               </div>
             </div>
 
-            {/* Model B */}
-            <div className="p-4 rounded-xl border-2 border-rose-500/60 bg-rose-50/30 dark:bg-rose-950/20 space-y-3">
+            <div className="p-4 rounded-xl border border-rose-500/50 bg-rose-950/20 space-y-3">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-bold uppercase tracking-wider text-rose-700 dark:text-rose-400">
+                <span className="text-xs font-mono font-bold uppercase text-rose-400">
                   Response B • Flagged Hallucination
                 </span>
-                <span className="px-2.5 py-0.5 rounded-full text-xs font-mono font-bold bg-rose-600 text-white">
-                  Rubric: {current.modelB.score}/100
+                <span className="px-2.5 py-0.5 rounded-full text-xs font-mono font-bold bg-rose-500 text-white">
+                  Score: {current.modelB.score}/100
                 </span>
               </div>
-              <p className="text-xs sm:text-sm text-slate-800 dark:text-slate-200 leading-relaxed">
-                {current.modelB.text}
-              </p>
-              <div className="p-2.5 rounded-lg bg-rose-100/80 dark:bg-rose-950/60 text-xs text-rose-800 dark:text-rose-300">
+              <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">{current.modelB.text}</p>
+              <div className="p-2.5 rounded-lg bg-rose-500/10 text-xs text-rose-300">
                 <strong>⚠ Root-Cause Audit:</strong> {current.modelB.hallucinatedClaim}
               </div>
             </div>
           </div>
 
-          {/* Export RLHF Payload */}
-          <div className="bg-slate-900 text-slate-100 rounded-xl p-4 border border-slate-800">
+          <div className="bg-[#05070c] rounded-xl p-4 border border-white/10">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-xs font-mono text-slate-400">Generated RLHF / QA Evaluation JSON Payload</span>
+              <span className="text-xs font-mono text-slate-400">Generated RLHF / QA Audit JSON Payload</span>
               <button
-                onClick={copyJson}
-                className="px-3 py-1 rounded bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold transition"
+                onClick={() => {
+                  navigator.clipboard.writeText(rlhfPayload);
+                  setCopiedJson(true);
+                  setTimeout(() => setCopiedJson(false), 2000);
+                }}
+                className="px-3 py-1 rounded-full bg-emerald-400 text-slate-950 text-xs font-bold transition hover:bg-emerald-300"
               >
                 {copiedJson ? "✓ Copied JSON!" : "Copy JSON Payload"}
               </button>
@@ -599,7 +613,7 @@
             { param: "Dissolved Oxygen (DO)", reading: "6.80 mg/L", range: "≥ 5.00 mg/L", status: "OPTIMAL" },
             { param: "Turbidity", reading: "3.2 NTU", range: "0.0 – 5.0 NTU", status: "OPTIMAL" },
             { param: "Water Temperature", reading: "26.4 °C", range: "15.0 – 32.0 °C", status: "OPTIMAL" },
-            { param: "Weather Station Wind Speed", reading: "14.2 km/h", range: "0.0 – 60.0 km/h", status: "OPTIMAL" }
+            { param: "Weather Station Wind", reading: "14.2 km/h", range: "0.0 – 60.0 km/h", status: "OPTIMAL" }
           ];
         }
         return [
@@ -607,7 +621,7 @@
           { param: "Dissolved Oxygen (DO)", reading: "3.15 mg/L", range: "≥ 5.00 mg/L", status: "LOW DO ALERT" },
           { param: "Turbidity", reading: "18.7 NTU", range: "0.0 – 5.0 NTU", status: "HIGH TURBIDITY" },
           { param: "Water Temperature", reading: "27.1 °C", range: "15.0 – 32.0 °C", status: "OPTIMAL" },
-          { param: "Weather Station Wind Speed", reading: "19.8 km/h", range: "0.0 – 60.0 km/h", status: "OPTIMAL" }
+          { param: "Weather Station Wind", reading: "19.8 km/h", range: "0.0 – 60.0 km/h", status: "OPTIMAL" }
         ];
       }, [simulateAnomaly]);
 
@@ -615,13 +629,7 @@
         const statusHeader = simulateAnomaly
           ? "ACTION REQUIRED — CALIBRATION & FIELD DIAGNOSTIC NEEDED"
           : "PASSED — ALL ENVIRONMENTAL PARAMETERS WITHIN ISO OPERATING RANGE";
-        return `FIELD TELEMETRY & COMPLIANCE SUMMARY REPORT
-Prepared By: Levie Andrew Cruz Lameyra (Technical Specialist)
-Station ID: LAGUNA-WQ-STATION-04 | Status: ${statusHeader}
---------------------------------------------------------------------
-${telemetry.map(t => `• ${t.param}: ${t.reading} (Allowed: ${t.range}) -> [${t.status}]`).join("\n")}
---------------------------------------------------------------------
-Recommended SOP Action: ${
+        return `FIELD TELEMETRY & COMPLIANCE SUMMARY REPORT\nPrepared By: Levie Andrew Cruz Lameyra (Technical Specialist)\nStation ID: LAGUNA-WQ-STATION-04 | Status: ${statusHeader}\n--------------------------------------------------------------------\n${telemetry.map(t => `• ${t.param}: ${t.reading} (Allowed: ${t.range}) -> [${t.status}]`).join("\n")}\n--------------------------------------------------------------------\nRecommended SOP Action: ${
           simulateAnomaly
             ? "Perform 3-point pH buffer calibration, inspect optical turbidity wiper for bio-fouling, and verify DO membrane integrity."
             : "Continue scheduled 15-minute automated telemetry logging. Next routine preventative maintenance in 14 days."
@@ -630,19 +638,19 @@ Recommended SOP Action: ${
 
       return (
         <div className="space-y-5">
-          <div className="flex flex-wrap items-center justify-between gap-3 bg-slate-100 dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800">
+          <div className="flex flex-wrap items-center justify-between gap-3 bg-[#0a0e18] p-4 rounded-xl border border-white/10">
             <div>
-              <h4 className="text-sm font-bold">Multiparameter Water Quality &amp; Weather Telemetry Stream</h4>
-              <p className="text-xs text-slate-500">
-                Toggle sensor drift simulation to test automated anomaly flagging and SOP report generation.
+              <h4 className="text-sm font-bold text-white">Multiparameter Water Quality &amp; Weather Telemetry Stream</h4>
+              <p className="text-xs text-slate-400">
+                Toggle sensor drift to test automated anomaly flagging and ISO report generation.
               </p>
             </div>
             <button
               onClick={() => setSimulateAnomaly(!simulateAnomaly)}
-              className={`btn-interactive px-4 py-2 rounded-lg text-xs font-semibold shadow ${
+              className={`btn-lumina px-4 py-2 rounded-full text-xs font-bold ${
                 simulateAnomaly
-                  ? "bg-amber-600 hover:bg-amber-500 text-white"
-                  : "bg-blue-600 hover:bg-blue-500 text-white"
+                  ? "bg-amber-400 text-slate-950"
+                  : "bg-emerald-400 text-slate-950 shadow-lg shadow-emerald-500/20"
               }`}
             >
               {simulateAnomaly ? "Reset to Normal Telemetry" : "Simulate Sensor Drift / Anomaly"}
@@ -655,18 +663,18 @@ Recommended SOP Action: ${
                 key={item.param}
                 className={`p-3.5 rounded-xl border ${
                   item.status === "OPTIMAL"
-                    ? "bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800"
-                    : "bg-rose-50/70 dark:bg-rose-950/30 border-rose-400 dark:border-rose-800"
+                    ? "bg-[#0d121e] border-white/10"
+                    : "bg-rose-950/30 border-rose-500/50"
                 }`}
               >
-                <p className="text-[11px] text-slate-500 font-medium">{item.param}</p>
-                <p className="text-base font-bold font-mono mt-1">{item.reading}</p>
+                <p className="text-[11px] text-slate-400 font-medium">{item.param}</p>
+                <p className="text-base font-bold font-mono mt-1 text-white">{item.reading}</p>
                 <p className="text-[10px] text-slate-400 font-mono mt-0.5">Spec: {item.range}</p>
                 <span
                   className={`inline-block mt-2 px-2 py-0.5 rounded text-[10px] font-mono font-bold ${
                     item.status === "OPTIMAL"
-                      ? "bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300"
-                      : "bg-rose-600 text-white"
+                      ? "bg-emerald-500/20 text-emerald-300"
+                      : "bg-rose-500 text-white"
                   }`}
                 >
                   {item.status}
@@ -675,7 +683,7 @@ Recommended SOP Action: ${
             ))}
           </div>
 
-          <div className="bg-slate-900 text-slate-100 rounded-xl p-4 border border-slate-800">
+          <div className="bg-[#05070c] rounded-xl p-4 border border-white/10">
             <div className="flex items-center justify-between mb-2">
               <span className="text-xs font-mono text-slate-400">Auto-Generated Field Activity &amp; Troubleshooting Report</span>
               <button
@@ -684,12 +692,12 @@ Recommended SOP Action: ${
                   setCopiedReport(true);
                   setTimeout(() => setCopiedReport(false), 2000);
                 }}
-                className="px-3 py-1 rounded bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold transition"
+                className="px-3 py-1 rounded-full bg-emerald-400 text-slate-950 text-xs font-bold transition hover:bg-emerald-300"
               >
                 {copiedReport ? "✓ Copied Report!" : "Copy Technical Report"}
               </button>
             </div>
-            <pre className="text-xs font-mono text-slate-200 whitespace-pre-wrap leading-relaxed">{technicalReport}</pre>
+            <pre className="text-xs font-mono text-slate-300 whitespace-pre-wrap leading-relaxed">{technicalReport}</pre>
           </div>
         </div>
       );
@@ -705,7 +713,6 @@ Recommended SOP Action: ${
           label: "Segment 01: Reach & Grasp Vessel",
           start: "00:00.0",
           end: "00:04.2",
-          duration: "4.2s",
           taxonomy: {
             Environment: "Indoor Residential",
             Venue: "Kitchen Countertop",
@@ -728,7 +735,6 @@ Recommended SOP Action: ${
           label: "Segment 02: Controlled Liquid Pour",
           start: "00:04.2",
           end: "00:09.8",
-          duration: "5.6s",
           taxonomy: {
             Environment: "Indoor Residential",
             Venue: "Kitchen Countertop",
@@ -751,7 +757,6 @@ Recommended SOP Action: ${
           label: "Segment 03: Return & Release Vessel",
           start: "00:09.8",
           end: "00:13.5",
-          duration: "3.7s",
           taxonomy: {
             Environment: "Indoor Residential",
             Venue: "Kitchen Countertop",
@@ -776,55 +781,52 @@ Recommended SOP Action: ${
 
       return (
         <div className="space-y-5">
-          {/* Interactive Timeline Selector */}
-          <div className="bg-slate-900 text-white p-4 rounded-xl border border-slate-800 space-y-3">
+          <div className="bg-[#090d16] p-4 rounded-xl border border-white/10 space-y-3">
             <div className="flex items-center justify-between text-xs font-mono text-slate-400">
               <span>RAW VIDEO STREAM: FRODOBOTS_MANIPULATION_042.MP4</span>
-              <span className="text-emerald-400">QA STATUS: BOUNDARIES VERIFIED</span>
+              <span className="text-emerald-400 font-bold">QA STATUS: BOUNDARIES VERIFIED</span>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
               {segments.map((seg, idx) => (
                 <button
                   key={seg.id}
                   onClick={() => setActiveSeg(idx)}
-                  className={`p-3 rounded-lg text-left transition border ${
+                  className={`p-3 rounded-xl text-left transition border ${
                     activeSeg === idx
-                      ? "bg-blue-600/20 border-blue-500 text-white"
-                      : "bg-slate-800/70 border-slate-700 text-slate-300 hover:bg-slate-800"
+                      ? "bg-emerald-500/10 border-emerald-400 text-white"
+                      : "bg-[#0d121e] border-white/10 text-slate-300 hover:bg-white/5"
                   }`}
                 >
                   <div className="flex items-center justify-between text-xs font-mono">
-                    <span className="font-bold text-blue-400">{seg.id}</span>
-                    <span>{seg.start} → {seg.end}</span>
+                    <span className="font-bold text-emerald-400">{seg.id}</span>
+                    <span className="text-slate-400">{seg.start} → {seg.end}</span>
                   </div>
-                  <p className="text-xs font-semibold mt-1">{seg.label}</p>
+                  <p className="text-xs font-semibold mt-1 text-white">{seg.label}</p>
                 </button>
               ))}
             </div>
           </div>
 
-          {/* Structured Taxonomy Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
             {Object.entries(current.taxonomy).map(([key, val]) => (
               <div
                 key={key}
-                className="p-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800"
+                className="p-3 rounded-xl bg-[#0d121e] border border-white/10"
               >
                 <p className="text-[11px] font-mono uppercase tracking-wider text-slate-400">{key}</p>
-                <p className="text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-100 mt-0.5">{val}</p>
+                <p className="text-xs sm:text-sm font-semibold text-slate-100 mt-0.5">{val}</p>
               </div>
             ))}
           </div>
 
-          {/* Cutting Segmentation QA Audit Checklist */}
-          <div className="p-4 rounded-xl bg-emerald-50/50 dark:bg-emerald-950/20 border border-emerald-300 dark:border-emerald-900">
-            <p className="text-xs font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 mb-2">
+          <div className="p-4 rounded-xl bg-emerald-950/20 border border-emerald-500/30">
+            <p className="text-xs font-bold uppercase tracking-wider text-emerald-400 mb-2 font-mono">
               Peer QA Cutting Boundary Audit ({current.id})
             </p>
-            <ul className="space-y-1.5 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+            <ul className="space-y-1.5 text-xs sm:text-sm text-slate-300">
               {current.qaChecks.map((check, i) => (
                 <li key={i} className="flex items-center gap-2">
-                  <span className="text-emerald-600 dark:text-emerald-400 font-bold">✓</span>
+                  <span className="text-emerald-400 font-bold">✓</span>
                   <span>{check}</span>
                 </li>
               ))}
@@ -835,22 +837,18 @@ Recommended SOP Action: ${
     }
 
     // ========================================================================
-    // MAIN PORTFOLIO APPLICATION
+    // MAIN APPLICATION COMPONENT (LUMINA CLIPPERS AGENCY AESTHETIC)
     // ========================================================================
     function App() {
       const data = window.PORTFOLIO_DATA;
-      const [darkMode, setDarkMode] = useState(true);
       const [portfolioCategory, setPortfolioCategory] = useState("All");
       const [certCategory, setCertCategory] = useState("All");
       const [activeSampleProject, setActiveSampleProject] = useState(null);
       const [activeCertModal, setActiveCertModal] = useState(null);
-      const [expandedExpIds, setExpandedExpIds] = useState(
-        () => data.experiences.map(e => e.id)
-      );
+      const [expandedExpIds, setExpandedExpIds] = useState(() => data.experiences.map(e => e.id));
       const [copiedField, setCopiedField] = useState("");
       const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-      // Contact Form State
       const [contactForm, setContactForm] = useState({
         name: "",
         email: "",
@@ -858,15 +856,6 @@ Recommended SOP Action: ${
         message: ""
       });
       const [formStatus, setFormStatus] = useState(null);
-
-      useEffect(() => {
-        const rootEl = document.documentElement;
-        if (darkMode) {
-          rootEl.classList.add("dark");
-        } else {
-          rootEl.classList.remove("dark");
-        }
-      }, [darkMode]);
 
       const copyToClipboard = (text, label) => {
         navigator.clipboard.writeText(text);
@@ -928,11 +917,8 @@ Recommended SOP Action: ${
               setContactForm({ name: "", email: "", service: "AI Workflow Automations", message: "" });
               return;
             }
-          } catch (err) {
-            // Fallback to mailto below
-          }
+          } catch (err) {}
         }
-        // Zero-backend direct email dispatch fallback
         const subject = encodeURIComponent(`[Portfolio Inquiry] ${contactForm.service} — ${contactForm.name}`);
         const body = encodeURIComponent(
           `Hello Levie,\n\nName: ${contactForm.name}\nEmail: ${contactForm.email}\nService of Interest: ${contactForm.service}\n\nMessage:\n${contactForm.message}`
@@ -942,328 +928,181 @@ Recommended SOP Action: ${
       };
 
       return (
-        <div className="min-h-screen flex flex-col grid-bg">
+        <div className="relative">
           {/* ================================================================
-              STICKY FORMAL NAVIGATION BAR
+              1. LUMINA-STYLE FLOATING PILL NAVBAR
           ================================================================ */}
-          <header className="sticky top-0 z-40 backdrop-blur-md bg-white/85 dark:bg-[#090d16]/85 border-b border-slate-200/80 dark:border-slate-800/80">
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
-              <a href="#home" className="flex items-center gap-3 group">
-                {data.profile.avatarUrl ? (
+          <div className="fixed top-4 sm:top-5 left-1/2 -translate-x-1/2 z-50 w-[94%] max-w-5xl">
+            <header className="pill-navbar rounded-full px-3.5 sm:px-5 py-2.5 flex items-center justify-between gap-3">
+              {/* Brand Avatar with Online Pulse */}
+              <a href="#home" className="flex items-center gap-2.5 group">
+                <div className="relative">
                   <img
-                    src={data.profile.avatarUrl}
+                    src={data.profile.avatarUrl || "./profile.jpg"}
                     alt={data.profile.shortName}
-                    className="w-9 h-9 rounded-lg object-cover object-top border border-blue-500/60 shadow-sm group-hover:scale-105 transition"
+                    className="w-8 h-8 sm:w-9 sm:h-9 rounded-full object-cover object-top border border-white/20 group-hover:border-emerald-400 transition"
                   />
-                ) : (
-                  <div className="w-9 h-9 rounded-lg bg-slate-900 dark:bg-blue-600 text-white font-display font-bold text-sm flex items-center justify-center shadow-sm group-hover:scale-105 transition">
-                    {data.profile.monogram}
-                  </div>
-                )}
-                <div>
-                  <span className="font-display font-bold text-sm sm:text-base tracking-tight block leading-none">
+                  <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-400 border-2 border-slate-950 animate-pulse" />
+                </div>
+                <div className="hidden sm:block">
+                  <span className="font-display font-bold text-xs sm:text-sm text-white block leading-none">
                     {data.profile.shortName}
                   </span>
-                  <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400">
-                    @{data.profile.username}
-                  </span>
+                  <span className="text-[10px] font-mono text-emerald-400">@{data.profile.username}</span>
                 </div>
               </a>
 
-              {/* Desktop Navigation Links */}
-              <nav className="hidden md:flex items-center gap-1 text-sm font-medium text-slate-600 dark:text-slate-300">
-                {[
-                  { label: "Home", href: "#home" },
-                  { label: "Services", href: "#services" },
-                  { label: "Portfolio", href: "#portfolio" },
-                  { label: "Experience", href: "#experience" },
-                  { label: "Certificates", href: "#certificates" },
-                  { label: "Contact", href: "#contact" }
-                ].map(item => (
-                  <a
-                    key={item.href}
-                    href={item.href}
-                    className="px-3.5 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/70 hover:text-slate-900 dark:hover:text-white transition"
-                  >
-                    {item.label}
-                  </a>
-                ))}
+              {/* Centered Desktop Navlinks with Active Dot */}
+              <nav className="hidden md:flex items-center gap-6 text-xs font-semibold text-slate-300">
+                <a href="#home" className="hover:text-white transition flex flex-col items-center">
+                  <span>Home</span>
+                  <span className="w-1 h-1 rounded-full bg-emerald-400 mt-0.5" />
+                </a>
+                <a href="#services" className="hover:text-white transition">What I Do</a>
+                <a href="#portfolio" className="hover:text-white transition">Workbenches</a>
+                <a href="#experience" className="hover:text-white transition">Experience</a>
+                <a href="#certificates" className="hover:text-white transition">Credentials</a>
+                <a href="#contact" className="hover:text-white transition">Contact</a>
               </nav>
 
-              {/* Right Interactive Controls */}
-              <div className="flex items-center gap-2.5">
-                <button
-                  onClick={() => setDarkMode(!darkMode)}
-                  title={darkMode ? "Switch to Editorial Light Mode" : "Switch to Executive Dark Mode"}
-                  className="btn-interactive p-2.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-100/80 dark:bg-slate-900 text-slate-700 dark:text-slate-200 hover:border-blue-500"
-                  aria-label="Toggle color theme"
-                >
-                  <Icon name={darkMode ? "sun" : "moon"} className="w-4 h-4" />
-                </button>
-
+              {/* Right CTA Button (Lumina Signature Emerald Capsule) */}
+              <div className="flex items-center gap-2">
                 <a
-                  href={data.profile.resumeHtmlUrl}
-                  className="btn-interactive hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-semibold bg-slate-900 hover:bg-slate-800 dark:bg-blue-600 dark:hover:bg-blue-500 text-white shadow-sm"
+                  href="#contact"
+                  className="btn-lumina inline-flex items-center gap-1.5 px-4 sm:px-5 py-2 rounded-full text-xs font-extrabold bg-emerald-400 hover:bg-emerald-300 text-slate-950 shadow-lg shadow-emerald-500/25"
                 >
-                  <Icon name="download" className="w-3.5 h-3.5" />
-                  <span>Resume / CV</span>
+                  <span>Hire Me / Inquire</span>
+                  <Icon name="arrowRight" className="w-3.5 h-3.5" />
                 </a>
 
                 <button
                   onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                  className="md:hidden p-2 rounded-lg border border-slate-200 dark:border-slate-800"
-                  aria-label="Toggle Menu"
+                  className="md:hidden p-2 rounded-full bg-white/10 text-white"
+                  aria-label="Toggle Navigation"
                 >
-                  <span className="text-xs font-mono font-bold">{mobileMenuOpen ? "CLOSE" : "MENU"}</span>
+                  <span className="text-xs font-mono font-bold">{mobileMenuOpen ? "✕" : "☰"}</span>
                 </button>
               </div>
-            </div>
+            </header>
 
-            {/* Mobile Dropdown */}
+            {/* Mobile Menu Dropdown */}
             {mobileMenuOpen && (
-              <div className="md:hidden border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-4 py-3 space-y-1">
-                {[
-                  { label: "Home", href: "#home" },
-                  { label: "Services", href: "#services" },
-                  { label: "Portfolio & Live Demos", href: "#portfolio" },
-                  { label: "Experience", href: "#experience" },
-                  { label: "Certificates", href: "#certificates" },
-                  { label: "Contact", href: "#contact" }
-                ].map(item => (
-                  <a
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="block py-2 text-sm font-medium text-slate-700 dark:text-slate-200"
-                  >
-                    {item.label}
-                  </a>
-                ))}
-                <a
-                  href={data.profile.resumeHtmlUrl}
-                  className="block pt-2 text-sm font-semibold text-blue-600 dark:text-blue-400"
-                >
-                  → View &amp; Download Formatted Resume
-                </a>
+              <div className="md:hidden mt-2 rounded-2xl bg-slate-950/95 border border-white/15 p-4 shadow-2xl backdrop-blur-2xl space-y-2 text-sm font-semibold">
+                <a href="#home" onClick={() => setMobileMenuOpen(false)} className="block py-1.5 text-emerald-400">Home</a>
+                <a href="#services" onClick={() => setMobileMenuOpen(false)} className="block py-1.5 text-slate-200">What I Do</a>
+                <a href="#portfolio" onClick={() => setMobileMenuOpen(false)} className="block py-1.5 text-slate-200">Portfolio &amp; Workbenches</a>
+                <a href="#experience" onClick={() => setMobileMenuOpen(false)} className="block py-1.5 text-slate-200">Experience</a>
+                <a href="#certificates" onClick={() => setMobileMenuOpen(false)} className="block py-1.5 text-slate-200">Certifications</a>
+                <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="block py-1.5 text-slate-200">Contact</a>
+                <a href="./resume.html" className="block pt-2 text-xs font-mono text-emerald-400">→ Open Printable Resume / CV</a>
               </div>
             )}
-          </header>
+          </div>
 
           {/* ================================================================
-              1. LANDING / HERO MODULE
+              2. LUMINA-STYLE HERO SECTION (Cinematic, Editorial & High-Impact)
           ================================================================ */}
-          <section id="home" className="relative pt-14 pb-20 sm:pt-20 sm:pb-24 px-4 sm:px-6">
+          <section id="home" className="relative pt-36 sm:pt-44 pb-20 px-4 sm:px-6 overflow-hidden">
+            {/* Ambient Background Glow Elements */}
+            <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-emerald-500/10 blur-[120px] rounded-full pointer-events-none" />
+
+            <div className="max-w-5xl mx-auto text-center relative z-10 space-y-7">
+              {/* Top Trust & Rating Badge (Lumina Clutch-style badge) */}
+              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-900/90 border border-white/10 text-xs text-slate-300 shadow-xl backdrop-blur-md">
+                <span className="inline-flex items-center gap-1 font-bold text-emerald-400">
+                  <Icon name="star" className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>5.0 QA Accuracy</span>
+                </span>
+                <span className="text-white/20">•</span>
+                <span className="text-slate-400">ISO 9001:2015 Trained</span>
+                <span className="text-white/20">•</span>
+                <span className="text-emerald-300 font-medium">Frodobots &amp; Innodata Veteran</span>
+              </div>
+
+              {/* Massive Agency Headline with Luxury Serif Italic & Inline Modality Badges */}
+              <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-[1.12]">
+                The <span className="text-white">multimodal AI specialist</span>
+                <br className="hidden sm:inline" />
+                <span className="font-editorial text-emerald-300 text-4xl sm:text-6xl md:text-7xl font-normal mx-1">
+                  for teams that want
+                </span>
+                <br />
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 border border-white/15 align-middle mx-1 text-xs sm:text-sm font-mono text-slate-200">
+                  <Icon name="video" className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>Video QA</span>
+                  <span className="text-white/30">•</span>
+                  <Icon name="bot" className="w-3.5 h-3.5 text-cyan-400" />
+                  <span>LLM</span>
+                  <span className="text-white/30">•</span>
+                  <Icon name="table" className="w-3.5 h-3.5 text-amber-400" />
+                  <span>Sheets</span>
+                </span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-200 to-cyan-400">
+                  {" "}predictable accuracy
+                </span>
+              </h1>
+
+              {/* Descriptive Paragraph */}
+              <p className="max-w-2xl mx-auto text-sm sm:text-base text-slate-400 leading-relaxed">
+                <strong>Levie Andrew Cruz Lameyra</strong> delivers high-accuracy multimodal dataset annotation, video action segmentation, LLM response evaluation &amp; hallucination auditing, and self-calculating spreadsheet automations on an agile, performance-driven basis.
+              </p>
+
+              {/* Dual Primary Call-to-Actions */}
+              <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
+                <a
+                  href="#portfolio"
+                  className="btn-lumina inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-sm font-extrabold bg-emerald-400 hover:bg-emerald-300 text-slate-950 shadow-xl shadow-emerald-500/25"
+                >
+                  <Icon name="play" className="w-4 h-4 text-slate-950" />
+                  <span>Test Live Interactive Workbenches</span>
+                </a>
+
+                <a
+                  href="./resume.html"
+                  className="btn-ghost inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold bg-white/5 text-white border border-white/15 backdrop-blur-md"
+                >
+                  <Icon name="download" className="w-4 h-4 text-emerald-400" />
+                  <span>Download Executive Resume (PDF)</span>
+                </a>
+              </div>
+
+              {/* Lumina-style Scroll Indicator */}
+              <div className="pt-8 flex flex-col items-center gap-2 text-slate-500">
+                <span className="text-[10px] font-mono tracking-widest uppercase">SCROLL</span>
+                <Icon name="arrowDown" className="w-4 h-4 animate-bounce text-emerald-400" />
+              </div>
+            </div>
+          </section>
+
+          {/* ================================================================
+              3. LUMINA HORIZONTAL METRIC & CLIENT TRUST BAR
+          ================================================================ */}
+          <section className="py-8 px-4 sm:px-6 border-y border-white/10 bg-[#090d16]/80 backdrop-blur-md">
             <div className="max-w-6xl mx-auto">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-                {/* Left Column: Executive Pitch */}
-                <div className="lg:col-span-7 space-y-6">
-                  <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/25">
-                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                    <span>{data.profile.availability}</span>
-                  </div>
-
-                  <div className="space-y-3">
-                    <p className="text-xs sm:text-sm font-mono uppercase tracking-widest text-blue-600 dark:text-blue-400 font-semibold">
-                      {data.profile.role}
-                    </p>
-                    <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight leading-[1.12] text-slate-900 dark:text-white">
-                      {data.profile.name}
-                    </h1>
-                    <p className="text-lg sm:text-xl font-medium text-slate-700 dark:text-slate-200 leading-snug pt-1">
-                      {data.profile.headline}
-                    </p>
-                  </div>
-
-                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl">
-                    {data.profile.subheadline}
-                  </p>
-
-                  {/* Interactive CTA Button Bar */}
-                  <div className="flex flex-wrap items-center gap-3 pt-2">
-                    <a
-                      href="#portfolio"
-                      className="btn-interactive inline-flex items-center gap-2.5 px-6 py-3 rounded-xl text-sm font-semibold bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-600/25"
-                    >
-                      <Icon name="play" className="w-4 h-4" />
-                      <span>Explore Interactive Portfolio</span>
-                    </a>
-
-                    <a
-                      href="#services"
-                      className="btn-interactive inline-flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-100 border border-slate-200 dark:border-slate-800 shadow-sm"
-                    >
-                      <span>View Services</span>
-                    </a>
-
-                    <button
-                      onClick={() => copyToClipboard(data.profile.email, "hero-email")}
-                      className="btn-interactive inline-flex items-center gap-2 px-4 py-3 rounded-xl text-xs sm:text-sm font-mono font-medium bg-slate-100 dark:bg-slate-900/90 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800"
-                    >
-                      <Icon name="copy" className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-                      <span>{copiedField === "hero-email" ? "✓ Email Copied!" : data.profile.email}</span>
-                    </button>
-                  </div>
-
-                  {/* Quick Interactive Demo Launchers */}
-                  <div className="pt-3 border-t border-slate-200/80 dark:border-slate-800/80">
-                    <p className="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2.5">
-                      Instant Live Workbenches (Click to Test):
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {data.portfolio.map(proj => (
-                        <button
-                          key={proj.id}
-                          onClick={() => setActiveSampleProject(proj)}
-                          className="btn-interactive inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-900 hover:bg-blue-50 dark:hover:bg-blue-950/50 text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 border border-slate-200/90 dark:border-slate-800"
-                        >
-                          <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
-                          <span>{proj.category} Demo</span>
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Right Column: Formal Executive Dossier Card */}
-                <div className="lg:col-span-5">
-                  <div className="relative rounded-2xl bg-white dark:bg-slate-900/90 border border-slate-200/90 dark:border-slate-800 p-6 sm:p-7 shadow-xl">
-                    <div className="flex items-center gap-4 pb-5 border-b border-slate-200 dark:border-slate-800">
-                      {data.profile.avatarUrl ? (
-                        <img
-                          src={data.profile.avatarUrl}
-                          alt={data.profile.name}
-                          className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl object-cover object-top border-2 border-blue-500/80 shadow-lg shrink-0"
-                        />
-                      ) : (
-                        <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-700 text-white font-display font-extrabold text-2xl flex items-center justify-center shadow-inner shrink-0">
-                          {data.profile.monogram}
-                        </div>
-                      )}
-                      <div>
-                        <span className="inline-block px-2.5 py-0.5 rounded text-[11px] font-mono font-semibold bg-blue-500/10 text-blue-600 dark:text-blue-400 mb-1">
-                          EXECUTIVE PROFILE
-                        </span>
-                        <h2 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">
-                          {data.profile.shortName}
-                        </h2>
-                        <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                          {data.profile.location}
-                        </p>
-                        <p className="text-[11px] font-mono text-blue-600 dark:text-blue-400 mt-0.5">
-                          {data.profile.timezone}
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Dossier Highlights */}
-                    <div className="py-5 space-y-3.5 text-xs sm:text-sm">
-                      <div className="flex justify-between items-center">
-                        <span className="text-slate-500">Primary Domain</span>
-                        <span className="font-semibold text-right">Multimodal AI QA &amp; Automations</span>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-slate-500">Recent Engagements</span>
-                        <span className="font-semibold text-right">Frodobots • Innodata • Access Gov</span>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-slate-500">Academic Credential</span>
-                        <span className="font-semibold text-right">B.Eng.Tech (TUP-Taguig, 2023)</span>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-slate-500">Quality Standards</span>
-                        <span className="font-semibold text-emerald-600 dark:text-emerald-400 text-right">
-                          ISO 9001:2015 &amp; ISO 31000:2018
-                        </span>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-slate-500">Languages</span>
-                        <span className="font-semibold text-right">English (Fluent) • Tagalog (Native)</span>
-                      </div>
-                    </div>
-
-                    {/* Action Footer inside Card */}
-                    <div className="pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-2">
-                      <div className="flex flex-wrap items-center gap-2">
-                        <a
-                          href={data.profile.socials.github}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="btn-interactive inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:text-blue-600"
-                        >
-                          <Icon name="github" className="w-3.5 h-3.5" />
-                          <span>GitHub</span>
-                        </a>
-                        {data.profile.socials.linkedin && (
-                          <a
-                            href={data.profile.socials.linkedin}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="btn-interactive inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-semibold bg-blue-600/10 text-blue-600 dark:text-blue-400 hover:bg-blue-600 hover:text-white"
-                          >
-                            <span>LinkedIn</span>
-                            <Icon name="external" className="w-3 h-3" />
-                          </a>
-                        )}
-                      </div>
-
-                      <div className="flex items-center gap-2">
-                        <a
-                          href={data.profile.resumeHtmlUrl}
-                          className="btn-interactive inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:text-blue-600"
-                        >
-                          <span>CV</span>
-                        </a>
-                        <a
-                          href={data.profile.resumePdfUrl}
-                          download="Levie_Andrew_Cruz_Lameyra_Resume.pdf"
-                          className="btn-interactive inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-semibold bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900"
-                        >
-                          <Icon name="download" className="w-3.5 h-3.5" />
-                          <span>PDF</span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* 4 Key Metrics Bar */}
-              <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                {data.metrics.map((m, idx) => (
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+                {[
+                  { value: "4 Modalities", label: "Text, Image, Audio & Video", client: "Frodobots" },
+                  { value: "99%+ SLA", label: "Rubric Compliance", client: "ISO 9001 Trained" },
+                  { value: "Priority QA", label: "LLM Response Evaluation", client: "Innodata" },
+                  { value: "B.Eng.Tech", label: "4-Year Degree Graduated", client: "TUP-Taguig" },
+                  { value: "3+ Systems", label: "Sheets, Excel & Python", client: "Automations" },
+                  { value: "100% Remote", label: "SLA & AHT Readiness", client: "Global Worldwide" }
+                ].map((item, idx) => (
                   <div
                     key={idx}
-                    className="p-5 rounded-2xl bg-white dark:bg-slate-900/75 border border-slate-200/90 dark:border-slate-800/90 shadow-sm"
+                    className="p-4 rounded-2xl bg-[#0e1320] border border-white/10 hover:border-emerald-500/40 transition flex flex-col justify-between"
                   >
-                    <p className="text-2xl sm:text-3xl font-extrabold font-display text-blue-600 dark:text-blue-400">
-                      {m.value}
-                    </p>
-                    <p className="text-sm font-bold text-slate-900 dark:text-white mt-1">{m.label}</p>
-                    <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">{m.detail}</p>
-                  </div>
-                ))}
-              </div>
-
-              {/* Core Skills Matrix */}
-              <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                {data.skillGroups.map((group, idx) => (
-                  <div
-                    key={idx}
-                    className="p-5 rounded-2xl bg-white/80 dark:bg-slate-900/50 border border-slate-200/80 dark:border-slate-800/80"
-                  >
-                    <div className="flex items-center gap-2.5 mb-3">
-                      <div className="p-2 rounded-lg bg-blue-600/10 text-blue-600 dark:text-blue-400">
-                        <Icon name={group.icon} className="w-4 h-4" />
-                      </div>
-                      <h3 className="text-sm font-bold text-slate-900 dark:text-white">{group.category}</h3>
+                    <div>
+                      <p className="text-xl sm:text-2xl font-extrabold font-display text-white">
+                        {item.value}
+                      </p>
+                      <p className="text-[11px] text-slate-400 font-medium mt-1 leading-snug">
+                        {item.label}
+                      </p>
                     </div>
-                    <ul className="space-y-1.5 text-xs text-slate-600 dark:text-slate-400">
-                      {group.skills.map((sk, i) => (
-                        <li key={i} className="flex items-start gap-2">
-                          <span className="text-blue-600 dark:text-blue-400 font-bold">•</span>
-                          <span>{sk}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    <span className="inline-block mt-3 px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-white/5 text-emerald-400 border border-white/10 self-start">
+                      {item.client}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -1271,22 +1110,19 @@ Recommended SOP Action: ${
           </section>
 
           {/* ================================================================
-              2. SERVICES MODULE
+              4. WHAT I DO (SERVICES MODULE)
           ================================================================ */}
-          <section
-            id="services"
-            className="py-20 px-4 sm:px-6 bg-white/70 dark:bg-slate-900/40 border-y border-slate-200/80 dark:border-slate-800/80"
-          >
-            <div className="max-w-6xl mx-auto">
-              <div className="max-w-2xl mb-12">
-                <span className="text-xs font-mono uppercase tracking-widest text-blue-600 dark:text-blue-400 font-semibold">
-                  Module 01 • Specialized Capabilities
+          <section id="services" className="py-24 px-4 sm:px-6 relative">
+            <div className="max-w-6xl mx-auto space-y-12">
+              <div className="text-center max-w-2xl mx-auto space-y-2">
+                <span className="text-xs font-mono uppercase tracking-widest text-emerald-400 font-bold">
+                  WHAT I DO • SPECIALIZED CAPABILITIES
                 </span>
-                <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight mt-1">
-                  Services &amp; Consulting Solutions
+                <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
+                  Engineered for <span className="font-editorial text-emerald-300 font-normal">accuracy &amp; scale</span>
                 </h2>
-                <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-2">
-                  Combining rigorous ISO-trained quality assurance with modern AI workflow automation, spreadsheet engineering, and AI-assisted programming.
+                <p className="text-sm text-slate-400">
+                  Bridging the gap between hands-on multimodal dataset curation, ISO quality standards, and intelligent automation pipelines.
                 </p>
               </div>
 
@@ -1294,31 +1130,33 @@ Recommended SOP Action: ${
                 {data.services.map(service => (
                   <div
                     key={service.id}
-                    className="group rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-blue-500/70 dark:hover:border-blue-500/70 p-6 sm:p-7 shadow-sm hover:shadow-xl transition flex flex-col justify-between"
+                    className="rounded-3xl bg-[#0c101b] border border-white/10 hover:border-emerald-500/50 p-7 shadow-2xl transition flex flex-col justify-between group"
                   >
                     <div>
                       <div className="flex items-center justify-between gap-3 mb-4">
-                        <div className="w-11 h-11 rounded-xl bg-blue-600/10 text-blue-600 dark:text-blue-400 flex items-center justify-center">
+                        <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center border border-emerald-500/20 group-hover:scale-105 transition">
                           <Icon name={service.icon} className="w-6 h-6" />
                         </div>
-                        <span className="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                        <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-white/5 text-emerald-400 border border-white/10">
                           {service.badge}
                         </span>
                       </div>
 
-                      <h3 className="text-xl font-bold text-slate-900 dark:text-white">{service.title}</h3>
-                      <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
+                      <h3 className="text-xl font-bold text-white group-hover:text-emerald-300 transition">
+                        {service.title}
+                      </h3>
+                      <p className="text-sm text-slate-400 mt-2 leading-relaxed">
                         {service.summary}
                       </p>
 
                       <div className="mt-5 space-y-2">
-                        <p className="text-xs font-mono uppercase tracking-wider text-slate-400">
+                        <p className="text-[11px] font-mono uppercase tracking-wider text-slate-500">
                           Key Deliverables:
                         </p>
-                        <ul className="space-y-1.5 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                        <ul className="space-y-1.5 text-xs sm:text-sm text-slate-300">
                           {service.deliverables.map((item, idx) => (
                             <li key={idx} className="flex items-start gap-2">
-                              <span className="text-blue-600 dark:text-blue-400 font-bold mt-0.5">✓</span>
+                              <span className="text-emerald-400 font-bold mt-0.5">✓</span>
                               <span>{item}</span>
                             </li>
                           ))}
@@ -1326,12 +1164,12 @@ Recommended SOP Action: ${
                       </div>
                     </div>
 
-                    <div className="mt-6 pt-5 border-t border-slate-100 dark:border-slate-800/80 flex flex-wrap items-center justify-between gap-3">
+                    <div className="mt-6 pt-5 border-t border-white/10 flex flex-wrap items-center justify-between gap-3">
                       <div className="flex flex-wrap gap-1.5">
                         {service.tools.map(t => (
                           <span
                             key={t}
-                            className="px-2.5 py-0.5 rounded-md text-[11px] font-mono bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400"
+                            className="px-2.5 py-0.5 rounded-full text-[11px] font-mono bg-white/5 text-slate-400 border border-white/5"
                           >
                             {t}
                           </span>
@@ -1340,9 +1178,9 @@ Recommended SOP Action: ${
 
                       <button
                         onClick={() => selectServiceAndScroll(service.title)}
-                        className="btn-interactive inline-flex items-center gap-1.5 text-xs font-semibold text-blue-600 dark:text-blue-400 hover:underline"
+                        className="btn-lumina inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300"
                       >
-                        <span>Request This Service →</span>
+                        <span>Request Service →</span>
                       </button>
                     </div>
                   </div>
@@ -1352,33 +1190,33 @@ Recommended SOP Action: ${
           </section>
 
           {/* ================================================================
-              3. PORTFOLIO MODULE (WITH INTERACTIVE MOCK SAMPLES)
+              5. PORTFOLIO & LIVE WORKBENCHES MODULE
           ================================================================ */}
-          <section id="portfolio" className="py-20 px-4 sm:px-6">
-            <div className="max-w-6xl mx-auto">
-              <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+          <section id="portfolio" className="py-24 px-4 sm:px-6 bg-[#080c14] border-y border-white/10">
+            <div className="max-w-6xl mx-auto space-y-12">
+              <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
                 <div>
-                  <span className="text-xs font-mono uppercase tracking-widest text-blue-600 dark:text-blue-400 font-semibold">
-                    Module 02 • Interactive Work Samples &amp; Case Studies
+                  <span className="text-xs font-mono uppercase tracking-widest text-emerald-400 font-bold">
+                    PORTFOLIO • INTERACTIVE CASE STUDIES &amp; WORK SAMPLES
                   </span>
-                  <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight mt-1">
-                    Portfolio &amp; Live Workbenches
+                  <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-1">
+                    Proof of <span className="font-editorial text-emerald-300 font-normal">execution</span>
                   </h2>
-                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-2 max-w-2xl">
-                    Click <strong>"Launch Interactive Demo"</strong> on any project card below to test live working simulations of my Spreadsheet Automations, AI Auditing Pipelines, AI-Assisted Code Tools, and Video QA Taxonomies.
+                  <p className="text-sm text-slate-400 mt-2 max-w-xl">
+                    Click <strong>"Launch Interactive Workbench"</strong> on any project to test functional simulators, or download real Excel (.xlsx) workbooks &amp; PDF manuals from my repository.
                   </p>
                 </div>
 
-                {/* Filter Buttons */}
+                {/* Filter Pills */}
                 <div className="flex flex-wrap gap-2">
                   {portfolioCategories.map(cat => (
                     <button
                       key={cat}
                       onClick={() => setPortfolioCategory(cat)}
-                      className={`btn-interactive px-3.5 py-2 rounded-xl text-xs font-semibold transition ${
+                      className={`px-4 py-2 rounded-full text-xs font-semibold transition ${
                         portfolioCategory === cat
-                          ? "bg-blue-600 text-white shadow-md shadow-blue-600/20"
-                          : "bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-blue-500"
+                          ? "bg-emerald-400 text-slate-950 font-bold shadow-lg shadow-emerald-500/20"
+                          : "bg-white/5 text-slate-300 border border-white/10 hover:bg-white/10"
                       }`}
                     >
                       {cat}
@@ -1387,16 +1225,16 @@ Recommended SOP Action: ${
                 </div>
               </div>
 
-              {/* Portfolio Cards Grid */}
+              {/* Cards Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {filteredPortfolio.map(project => (
                   <div
                     key={project.id}
-                    className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 sm:p-7 shadow-sm hover:shadow-xl transition flex flex-col justify-between"
+                    className="rounded-3xl bg-[#0c101c] border border-white/10 hover:border-emerald-500/40 p-6 sm:p-7 shadow-2xl transition flex flex-col justify-between group"
                   >
                     <div>
                       <div className="flex items-center justify-between gap-2 mb-3">
-                        <span className="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-blue-600/10 text-blue-600 dark:text-blue-400">
+                        <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                           {project.category}
                         </span>
                         <span className="text-xs font-mono text-slate-400">{project.clientContext}</span>
@@ -1405,51 +1243,51 @@ Recommended SOP Action: ${
                       {project.previewImage && (
                         <div
                           onClick={() => setActiveSampleProject(project)}
-                          className="mb-4 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-950 h-44 cursor-pointer group relative"
+                          className="mb-4 rounded-2xl overflow-hidden border border-white/10 bg-slate-950 h-48 cursor-pointer relative group/img"
                         >
                           <img
                             src={project.previewImage}
                             alt={project.title}
-                            className="w-full h-full object-cover object-top group-hover:scale-105 transition duration-300"
+                            className="w-full h-full object-cover object-top group-hover/img:scale-105 transition duration-300 opacity-90"
                           />
-                          <div className="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                            <span className="px-3.5 py-1.5 rounded-lg bg-blue-600 text-white text-xs font-semibold shadow">
-                              Click to Launch Interactive Workbench
+                          <div className="absolute inset-0 bg-slate-950/60 opacity-0 group-hover/img:opacity-100 transition flex items-center justify-center">
+                            <span className="px-4 py-2 rounded-full bg-emerald-400 text-slate-950 text-xs font-extrabold shadow-lg">
+                              Launch Interactive Demo →
                             </span>
                           </div>
                         </div>
                       )}
 
-                      <h3 className="text-xl font-bold text-slate-900 dark:text-white">{project.title}</h3>
-                      <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
+                      <h3 className="text-xl font-bold text-white group-hover:text-emerald-300 transition">
+                        {project.title}
+                      </h3>
+                      <p className="text-sm text-slate-400 mt-2 leading-relaxed">
                         {project.summary}
                       </p>
 
-                      <div className="mt-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-950/70 border border-slate-200/70 dark:border-slate-800/80 space-y-2 text-xs">
-                        <p className="text-slate-600 dark:text-slate-400">
-                          <strong className="text-slate-900 dark:text-slate-200">Operational Challenge:</strong>{" "}
-                          {project.challenge}
+                      <div className="mt-4 p-4 rounded-2xl bg-black/40 border border-white/10 space-y-2 text-xs">
+                        <p className="text-slate-300">
+                          <strong className="text-emerald-400">Operational Challenge:</strong> {project.challenge}
                         </p>
-                        <p className="text-slate-600 dark:text-slate-400">
-                          <strong className="text-slate-900 dark:text-slate-200">Engineered Solution:</strong>{" "}
-                          {project.solution}
+                        <p className="text-slate-300">
+                          <strong className="text-emerald-400">Engineered Solution:</strong> {project.solution}
                         </p>
                       </div>
 
-                      <ul className="mt-4 space-y-1 text-xs text-slate-600 dark:text-slate-300">
+                      <ul className="mt-4 space-y-1 text-xs text-slate-300">
                         {project.metrics.map((m, i) => (
                           <li key={i} className="flex items-center gap-2">
-                            <span className="text-emerald-500 font-bold">●</span>
+                            <span className="text-emerald-400 font-bold">●</span>
                             <span>{m}</span>
                           </li>
                         ))}
                       </ul>
 
-                      {/* Real Repo Document & Spreadsheet Attachments */}
+                      {/* Attached Repository Work Sample Files */}
                       {project.attachments && project.attachments.length > 0 && (
-                        <div className="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800/80">
+                        <div className="mt-4 pt-3 border-t border-white/10">
                           <p className="text-[11px] font-mono uppercase tracking-wider text-slate-400 mb-2">
-                            Included Work Sample Files (View / Download):
+                            Attached Files (View / Download):
                           </p>
                           <div className="flex flex-wrap gap-2">
                             {project.attachments.map((att, i) => (
@@ -1458,9 +1296,9 @@ Recommended SOP Action: ${
                                 href={att.url}
                                 target="_blank"
                                 rel="noreferrer"
-                                className="btn-interactive inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 hover:bg-blue-600 hover:text-white text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 transition"
+                                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-white/5 hover:bg-emerald-500 hover:text-slate-950 text-slate-200 border border-white/10 transition"
                               >
-                                <Icon name="download" className="w-3.5 h-3.5" />
+                                <Icon name="download" className="w-3 h-3" />
                                 <span>{att.label}</span>
                               </a>
                             ))}
@@ -1469,12 +1307,12 @@ Recommended SOP Action: ${
                       )}
                     </div>
 
-                    <div className="mt-6 pt-5 border-t border-slate-100 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3">
+                    <div className="mt-6 pt-5 border-t border-white/10 flex flex-wrap items-center justify-between gap-3">
                       <div className="flex flex-wrap gap-1.5">
                         {project.tags.map(tag => (
                           <span
                             key={tag}
-                            className="px-2.5 py-0.5 rounded text-[11px] font-mono bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400"
+                            className="px-2.5 py-0.5 rounded-full text-[11px] font-mono bg-white/5 text-slate-400"
                           >
                             {tag}
                           </span>
@@ -1483,7 +1321,7 @@ Recommended SOP Action: ${
 
                       <button
                         onClick={() => setActiveSampleProject(project)}
-                        className="btn-interactive w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-blue-600 hover:bg-blue-500 text-white shadow-md shadow-blue-600/20"
+                        className="btn-lumina w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full text-xs font-extrabold bg-emerald-400 hover:bg-emerald-300 text-slate-950 shadow"
                       >
                         <Icon name="play" className="w-3.5 h-3.5" />
                         <span>{project.sampleButtonLabel}</span>
@@ -1496,84 +1334,75 @@ Recommended SOP Action: ${
           </section>
 
           {/* ================================================================
-              4. EXPERIENCES & EDUCATION MODULE
+              6. PROFESSIONAL EXPERIENCE & EDUCATION MODULE
           ================================================================ */}
-          <section
-            id="experience"
-            className="py-20 px-4 sm:px-6 bg-white/70 dark:bg-slate-900/40 border-y border-slate-200/80 dark:border-slate-800/80"
-          >
-            <div className="max-w-6xl mx-auto">
-              <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
+          <section id="experience" className="py-24 px-4 sm:px-6">
+            <div className="max-w-5xl mx-auto space-y-12">
+              <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
                 <div>
-                  <span className="text-xs font-mono uppercase tracking-widest text-blue-600 dark:text-blue-400 font-semibold">
-                    Module 03 • Career Progression
+                  <span className="text-xs font-mono uppercase tracking-widest text-emerald-400 font-bold">
+                    CAREER PROGRESSION • PRODUCTION EXPERIENCE
                   </span>
-                  <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight mt-1">
-                    Professional Experience &amp; Education
+                  <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-1">
+                    Track record of <span className="font-editorial text-emerald-300 font-normal">reliability</span>
                   </h2>
-                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-2">
-                    Click any role card to expand or collapse detailed operational achievements.
-                  </p>
                 </div>
 
                 <div className="flex items-center gap-2">
                   <button
                     onClick={() => setExpandedExpIds(data.experiences.map(e => e.id))}
-                    className="btn-interactive px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300"
+                    className="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10"
                   >
                     Expand All
                   </button>
                   <button
                     onClick={() => setExpandedExpIds([])}
-                    className="btn-interactive px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300"
+                    className="px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white/5 hover:bg-white/10 text-slate-300 border border-white/10"
                   >
                     Collapse All
                   </button>
                 </div>
               </div>
 
-              {/* Timeline List */}
-              <div className="relative pl-6 sm:pl-8 border-l-2 border-blue-600/30 dark:border-blue-500/30 space-y-6">
+              {/* Timeline */}
+              <div className="relative pl-6 sm:pl-8 border-l-2 border-emerald-500/30 space-y-6">
                 {data.experiences.map(exp => {
                   const isOpen = expandedExpIds.includes(exp.id);
                   return (
                     <div key={exp.id} className="relative">
-                      {/* Timeline Dot */}
-                      <span className="absolute -left-[31px] sm:-left-[39px] top-6 w-4 h-4 rounded-full bg-blue-600 border-4 border-white dark:border-[#090d16]" />
+                      <span className="absolute -left-[31px] sm:-left-[39px] top-6 w-4 h-4 rounded-full bg-emerald-400 border-4 border-slate-950" />
 
-                      <div className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 shadow-sm transition">
+                      <div className="rounded-3xl bg-[#0c101c] border border-white/10 p-6 sm:p-7 shadow-xl">
                         <div
                           onClick={() => toggleExperience(exp.id)}
                           className="flex flex-wrap items-start justify-between gap-3 cursor-pointer"
                         >
                           <div>
                             <div className="flex flex-wrap items-center gap-2">
-                              <span className="px-2.5 py-0.5 rounded text-[11px] font-mono font-semibold bg-blue-600/10 text-blue-600 dark:text-blue-400">
+                              <span className="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                                 {exp.type}
                               </span>
-                              <span className="text-xs font-mono text-slate-500 dark:text-slate-400">
-                                {exp.period}
-                              </span>
+                              <span className="text-xs font-mono text-slate-400">{exp.period}</span>
                             </div>
-                            <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mt-1.5">
+                            <h3 className="text-lg sm:text-xl font-bold text-white mt-1.5">
                               {exp.role}{" "}
-                              <span className="text-blue-600 dark:text-blue-400">@ {exp.company}</span>
+                              <span className="text-emerald-400">@ {exp.company}</span>
                             </h3>
                           </div>
 
-                          <button className="px-3 py-1 rounded-lg text-xs font-mono bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                          <button className="px-3 py-1 rounded-full text-xs font-mono bg-white/5 text-slate-300 border border-white/10">
                             {isOpen ? "Hide Details −" : "Show Details +"}
                           </button>
                         </div>
 
-                        <p className="text-sm text-slate-600 dark:text-slate-400 mt-2">{exp.summary}</p>
+                        <p className="text-sm text-slate-400 mt-2">{exp.summary}</p>
 
                         {isOpen && (
-                          <div className="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800 space-y-3">
-                            <ul className="space-y-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                          <div className="mt-4 pt-4 border-t border-white/10 space-y-3">
+                            <ul className="space-y-2 text-xs sm:text-sm text-slate-300">
                               {exp.highlights.map((bullet, idx) => (
                                 <li key={idx} className="flex items-start gap-2.5 leading-relaxed">
-                                  <span className="text-blue-600 dark:text-blue-400 font-bold mt-0.5">▸</span>
+                                  <span className="text-emerald-400 font-bold mt-0.5">▸</span>
                                   <span>{bullet}</span>
                                 </li>
                               ))}
@@ -1583,7 +1412,7 @@ Recommended SOP Action: ${
                               {exp.skills.map(sk => (
                                 <span
                                   key={sk}
-                                  className="px-2.5 py-0.5 rounded text-[11px] font-mono bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400"
+                                  className="px-2.5 py-0.5 rounded-full text-[11px] font-mono bg-white/5 text-slate-400"
                                 >
                                   {sk}
                                 </span>
@@ -1597,54 +1426,49 @@ Recommended SOP Action: ${
                 })}
               </div>
 
-              {/* Academic Education Card */}
-              <div className="mt-10 rounded-2xl bg-gradient-to-r from-slate-900 to-slate-800 dark:from-slate-900 dark:to-blue-950/40 text-white p-6 sm:p-8 border border-slate-800 shadow-lg">
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                  <div>
-                    <span className="text-xs font-mono uppercase tracking-widest text-blue-400 font-semibold">
-                      Academic Foundation • {data.education[0].programNote}
-                    </span>
-                    <h3 className="text-xl sm:text-2xl font-bold mt-1">{data.education[0].degree}</h3>
-                    <p className="text-sm text-slate-300 mt-1">
-                      {data.education[0].institution} • <strong>{data.education[0].year}</strong>
-                    </p>
-                    <p className="text-xs sm:text-sm text-slate-400 mt-2 max-w-3xl">
-                      {data.education[0].details}
-                    </p>
-                  </div>
-                </div>
+              {/* Education Card */}
+              <div className="rounded-3xl bg-gradient-to-r from-emerald-950/40 via-[#0e1422] to-slate-950 text-white p-7 sm:p-8 border border-white/10 shadow-2xl">
+                <span className="text-xs font-mono uppercase tracking-widest text-emerald-400 font-bold">
+                  ACADEMIC FOUNDATION • {data.education[0].programNote}
+                </span>
+                <h3 className="text-xl sm:text-2xl font-bold mt-1">{data.education[0].degree}</h3>
+                <p className="text-sm text-slate-300 mt-1">
+                  {data.education[0].institution} • <strong className="text-emerald-400">{data.education[0].year}</strong>
+                </p>
+                <p className="text-xs sm:text-sm text-slate-400 mt-2 max-w-3xl leading-relaxed">
+                  {data.education[0].details}
+                </p>
               </div>
             </div>
           </section>
 
           {/* ================================================================
-              5. CERTIFICATES MODULE
+              7. CERTIFICATIONS & STANDARDS MODULE
           ================================================================ */}
-          <section id="certificates" className="py-20 px-4 sm:px-6">
-            <div className="max-w-6xl mx-auto">
-              <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+          <section id="certificates" className="py-24 px-4 sm:px-6 bg-[#080c14] border-y border-white/10">
+            <div className="max-w-6xl mx-auto space-y-12">
+              <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
                 <div>
-                  <span className="text-xs font-mono uppercase tracking-widest text-blue-600 dark:text-blue-400 font-semibold">
-                    Module 04 • Verified Credentials
+                  <span className="text-xs font-mono uppercase tracking-widest text-emerald-400 font-bold">
+                    CREDENTIALS • VERIFIED CERTIFICATIONS
                   </span>
-                  <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight mt-1">
-                    Certifications &amp; Standards Training
+                  <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-1">
+                    Standards &amp; <span className="font-editorial text-emerald-300 font-normal">training</span>
                   </h2>
-                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-2">
-                    Click any certification card to inspect the official certificate image and credential details.
+                  <p className="text-sm text-slate-400 mt-2">
+                    Click any certification card to inspect the verified credential and certificate image.
                   </p>
                 </div>
 
-                {/* Certificate Category Filter */}
                 <div className="flex flex-wrap gap-2">
                   {certCategories.map(cat => (
                     <button
                       key={cat}
                       onClick={() => setCertCategory(cat)}
-                      className={`btn-interactive px-3.5 py-2 rounded-xl text-xs font-semibold transition ${
+                      className={`px-4 py-2 rounded-full text-xs font-semibold transition ${
                         certCategory === cat
-                          ? "bg-blue-600 text-white shadow-md shadow-blue-600/20"
-                          : "bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-800"
+                          ? "bg-emerald-400 text-slate-950 font-bold shadow-lg shadow-emerald-500/20"
+                          : "bg-white/5 text-slate-300 border border-white/10 hover:bg-white/10"
                       }`}
                     >
                       {cat}
@@ -1658,11 +1482,11 @@ Recommended SOP Action: ${
                   <div
                     key={cert.id}
                     onClick={() => setActiveCertModal(cert)}
-                    className="group cursor-pointer rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-blue-500 p-6 shadow-sm hover:shadow-xl transition flex flex-col justify-between"
+                    className="group cursor-pointer rounded-3xl bg-[#0c101c] border border-white/10 hover:border-emerald-500/50 p-6 shadow-xl transition flex flex-col justify-between"
                   >
                     <div>
                       {cert.imageUrl ? (
-                        <div className="mb-4 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 h-40 bg-slate-100 dark:bg-slate-950">
+                        <div className="mb-4 rounded-2xl overflow-hidden border border-white/10 h-40 bg-black/50">
                           <img
                             src={cert.imageUrl}
                             alt={cert.title}
@@ -1671,33 +1495,33 @@ Recommended SOP Action: ${
                         </div>
                       ) : (
                         <div className="flex items-center justify-between gap-2 mb-4">
-                          <div className="p-2.5 rounded-xl bg-blue-600/10 text-blue-600 dark:text-blue-400">
+                          <div className="p-3 rounded-2xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                             <Icon name="award" className="w-5 h-5" />
                           </div>
-                          <span className="px-2.5 py-1 rounded-full text-xs font-mono font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                          <span className="px-2.5 py-1 rounded-full text-xs font-mono font-bold bg-white/5 text-slate-300">
                             {cert.year}
                           </span>
                         </div>
                       )}
 
                       <div className="flex items-center justify-between gap-2">
-                        <span className="text-[11px] font-mono uppercase tracking-wider text-blue-600 dark:text-blue-400 font-semibold">
+                        <span className="text-[11px] font-mono uppercase tracking-wider text-emerald-400 font-bold">
                           {cert.category}
                         </span>
                         <span className="text-xs font-mono text-slate-400">{cert.year}</span>
                       </div>
-                      <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white mt-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition">
+                      <h3 className="text-base sm:text-lg font-bold text-white mt-1 group-hover:text-emerald-300 transition">
                         {cert.title}
                       </h3>
-                      <p className="text-xs font-semibold text-slate-500 mt-1">{cert.issuer}</p>
-                      <p className="text-xs text-slate-600 dark:text-slate-400 mt-3 line-clamp-3 leading-relaxed">
+                      <p className="text-xs font-semibold text-slate-400 mt-1">{cert.issuer}</p>
+                      <p className="text-xs text-slate-400 mt-3 line-clamp-3 leading-relaxed">
                         {cert.summary}
                       </p>
                     </div>
 
-                    <div className="mt-5 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-semibold text-blue-600 dark:text-blue-400">
+                    <div className="mt-5 pt-4 border-t border-white/10 flex items-center justify-between text-xs font-bold text-emerald-400">
                       <span>{cert.verificationNote}</span>
-                      <span>Inspect →</span>
+                      <span>Inspect Credential →</span>
                     </div>
                   </div>
                 ))}
@@ -1706,176 +1530,146 @@ Recommended SOP Action: ${
           </section>
 
           {/* ================================================================
-              6. CONTACT MODULE
+              8. CONTACT MODULE (Lumina-style conversion section)
           ================================================================ */}
-          <section
-            id="contact"
-            className="py-20 px-4 sm:px-6 bg-white/80 dark:bg-slate-900/60 border-t border-slate-200/80 dark:border-slate-800/80"
-          >
+          <section id="contact" className="py-24 px-4 sm:px-6 relative">
             <div className="max-w-6xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-                {/* Left Contact Info & Interactive Buttons */}
                 <div className="lg:col-span-5 space-y-6">
                   <div>
-                    <span className="text-xs font-mono uppercase tracking-widest text-blue-600 dark:text-blue-400 font-semibold">
-                      Module 05 • Direct Engagement
+                    <span className="text-xs font-mono uppercase tracking-widest text-emerald-400 font-bold">
+                      GET IN TOUCH • DIRECT ENGAGEMENT
                     </span>
-                    <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight mt-1">
-                      Let’s Build &amp; Automate Together
+                    <h2 className="text-3xl sm:text-5xl font-extrabold text-white mt-1">
+                      Let’s build <span className="font-editorial text-emerald-300 font-normal">together</span>
                     </h2>
-                    <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
-                      Available immediately for full-time remote roles, project-based AI data evaluation, spreadsheet automation builds, and custom AI-assisted tools.
+                    <p className="text-sm text-slate-400 mt-2 leading-relaxed">
+                      Available immediately for full-time remote roles, project-based data evaluation, spreadsheet automation builds, and custom AI tooling.
                     </p>
                   </div>
 
-                  {/* Interactive Copy Cards */}
+                  {/* Interactive Quick-Copy Cards */}
                   <div className="space-y-3">
-                    <div className="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-between gap-3">
+                    <div className="p-4 rounded-2xl bg-[#0c101c] border border-white/10 flex items-center justify-between gap-3">
                       <div className="flex items-center gap-3">
-                        <div className="p-2.5 rounded-lg bg-blue-600/10 text-blue-600 dark:text-blue-400">
+                        <div className="p-2.5 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                           <Icon name="mail" className="w-5 h-5" />
                         </div>
                         <div>
-                          <p className="text-xs text-slate-500">Direct Email</p>
-                          <p className="text-sm font-mono font-semibold">{data.profile.email}</p>
+                          <p className="text-xs text-slate-400">Direct Email</p>
+                          <p className="text-sm font-mono font-semibold text-white">{data.profile.email}</p>
                         </div>
                       </div>
                       <button
                         onClick={() => copyToClipboard(data.profile.email, "contact-email")}
-                        className="btn-interactive px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 hover:bg-blue-600 hover:text-white transition"
+                        className="px-3.5 py-1.5 rounded-full text-xs font-bold bg-white/5 hover:bg-emerald-400 hover:text-slate-950 text-slate-200 border border-white/10 transition"
                       >
                         {copiedField === "contact-email" ? "✓ Copied" : "Copy"}
                       </button>
                     </div>
 
-                    <div className="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-between gap-3">
+                    <div className="p-4 rounded-2xl bg-[#0c101c] border border-white/10 flex items-center justify-between gap-3">
                       <div className="flex items-center gap-3">
-                        <div className="p-2.5 rounded-lg bg-emerald-600/10 text-emerald-600 dark:text-emerald-400">
+                        <div className="p-2.5 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                           <Icon name="phone" className="w-5 h-5" />
                         </div>
                         <div>
-                          <p className="text-xs text-slate-500">Phone / WhatsApp / Viber</p>
-                          <p className="text-sm font-mono font-semibold">{data.profile.phone}</p>
+                          <p className="text-xs text-slate-400">Phone / WhatsApp / Viber</p>
+                          <p className="text-sm font-mono font-semibold text-white">{data.profile.phone}</p>
                         </div>
                       </div>
                       <button
                         onClick={() => copyToClipboard(data.profile.phone, "contact-phone")}
-                        className="btn-interactive px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 hover:bg-emerald-600 hover:text-white transition"
+                        className="px-3.5 py-1.5 rounded-full text-xs font-bold bg-white/5 hover:bg-emerald-400 hover:text-slate-950 text-slate-200 border border-white/10 transition"
                       >
                         {copiedField === "contact-phone" ? "✓ Copied" : "Copy"}
                       </button>
                     </div>
                   </div>
 
-                  {/* External Profile & Resume Links */}
-                  <div className="pt-2 space-y-2.5">
-                    <p className="text-xs font-mono uppercase tracking-wider text-slate-400">
-                      Profiles &amp; Resume Documents
+                  {/* External Profiles Bar */}
+                  <div className="pt-2 space-y-2">
+                    <p className="text-[11px] font-mono uppercase tracking-wider text-slate-400">
+                      Profiles &amp; Verification Links
                     </p>
-                    <div className="flex flex-wrap gap-2.5">
+                    <div className="flex flex-wrap gap-2">
                       <a
                         href={data.profile.socials.github}
                         target="_blank"
                         rel="noreferrer"
-                        className="btn-interactive inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-slate-900 text-white dark:bg-slate-800"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold bg-white/5 hover:bg-white/10 text-white border border-white/10 transition"
                       >
-                        <Icon name="github" className="w-4 h-4" />
-                        <span>GitHub (@CaptLeviticus)</span>
+                        <Icon name="github" className="w-3.5 h-3.5" />
+                        <span>github.com/{data.profile.username}</span>
                       </a>
 
-                      {data.profile.socials.linkedin && (
-                        <a
-                          href={data.profile.socials.linkedin}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="btn-interactive inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-blue-700 text-white"
-                        >
-                          <span>LinkedIn Profile</span>
-                          <Icon name="external" className="w-3.5 h-3.5" />
-                        </a>
-                      )}
-
-                      {data.profile.socials.upwork && (
-                        <a
-                          href={data.profile.socials.upwork}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="btn-interactive inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-emerald-700 text-white"
-                        >
-                          <span>Upwork Profile</span>
-                          <Icon name="external" className="w-3.5 h-3.5" />
-                        </a>
-                      )}
-
-                      {data.profile.socials.onlinejobs && (
-                        <a
-                          href={data.profile.socials.onlinejobs}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="btn-interactive inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-indigo-700 text-white"
-                        >
-                          <span>OnlineJobs.ph</span>
-                          <Icon name="external" className="w-3.5 h-3.5" />
-                        </a>
-                      )}
+                      <a
+                        href={data.profile.socials.linkedin}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold bg-blue-600/20 hover:bg-blue-600 text-blue-300 hover:text-white border border-blue-500/30 transition"
+                      >
+                        <Icon name="linkedin" className="w-3.5 h-3.5" />
+                        <span>LinkedIn</span>
+                      </a>
 
                       <a
-                        href={data.profile.resumeHtmlUrl}
-                        className="btn-interactive inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-blue-600 text-white"
+                        href="./resume.html"
+                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold bg-white/5 hover:bg-white/10 text-white border border-white/10 transition"
                       >
-                        <Icon name="download" className="w-4 h-4" />
-                        <span>Open Printable Resume</span>
+                        <Icon name="download" className="w-3.5 h-3.5 text-emerald-400" />
+                        <span>Executive CV</span>
                       </a>
                     </div>
                   </div>
                 </div>
 
-                {/* Right Interactive Inquiry Form */}
+                {/* Inquiry Form */}
                 <div className="lg:col-span-7">
                   <form
                     onSubmit={handleContactSubmit}
-                    className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 sm:p-8 shadow-lg space-y-5"
+                    className="rounded-3xl bg-[#0c101c] border border-white/10 p-7 sm:p-8 shadow-2xl space-y-5"
                   >
-                    <h3 className="text-lg font-bold">Send a Direct Inquiry</h3>
+                    <h3 className="text-xl font-bold text-white">Send a Project or Role Inquiry</h3>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">
+                        <label className="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-1.5">
                           Your Name *
                         </label>
                         <input
                           type="text"
                           required
-                          placeholder="e.g., Sarah Jenkins"
+                          placeholder="e.g. Alex Morgan"
                           value={contactForm.name}
                           onChange={e => setContactForm({ ...contactForm, name: e.target.value })}
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-sm focus:outline-none focus:border-blue-500"
+                          className="w-full px-4 py-3 rounded-2xl border border-white/10 bg-[#07090f] text-sm text-white focus:outline-none focus:border-emerald-400 transition"
                         />
                       </div>
 
                       <div>
-                        <label className="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">
+                        <label className="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-1.5">
                           Your Email *
                         </label>
                         <input
                           type="email"
                           required
-                          placeholder="name@company.com"
+                          placeholder="alex@company.com"
                           value={contactForm.email}
                           onChange={e => setContactForm({ ...contactForm, email: e.target.value })}
-                          className="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-sm focus:outline-none focus:border-blue-500"
+                          className="w-full px-4 py-3 rounded-2xl border border-white/10 bg-[#07090f] text-sm text-white focus:outline-none focus:border-emerald-400 transition"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">
-                        Module / Service of Interest
+                      <label className="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-1.5">
+                        Service of Interest
                       </label>
                       <select
                         value={contactForm.service}
                         onChange={e => setContactForm({ ...contactForm, service: e.target.value })}
-                        className="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-sm focus:outline-none focus:border-blue-500"
+                        className="w-full px-4 py-3 rounded-2xl border border-white/10 bg-[#07090f] text-sm text-white focus:outline-none focus:border-emerald-400 transition"
                       >
                         {data.services.map(s => (
                           <option key={s.id} value={s.title}>
@@ -1889,35 +1683,35 @@ Recommended SOP Action: ${
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1.5">
-                        Project Details or Role Description *
+                      <label className="block text-xs font-mono uppercase tracking-wider text-slate-400 mb-1.5">
+                        Project Overview or Job Details *
                       </label>
                       <textarea
                         rows="4"
                         required
-                        placeholder="Share a brief overview of your team's dataset, spreadsheet workflow, or automation goals..."
+                        placeholder="Describe your dataset, spreadsheet requirements, or automation project..."
                         value={contactForm.message}
                         onChange={e => setContactForm({ ...contactForm, message: e.target.value })}
-                        className="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-sm focus:outline-none focus:border-blue-500"
+                        className="w-full px-4 py-3 rounded-2xl border border-white/10 bg-[#07090f] text-sm text-white focus:outline-none focus:border-emerald-400 transition"
                       />
                     </div>
 
                     <div className="flex flex-wrap items-center justify-between gap-4 pt-1">
                       <button
                         type="submit"
-                        className="btn-interactive inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-600/25"
+                        className="btn-lumina inline-flex items-center gap-2 px-7 py-3 rounded-full text-sm font-extrabold bg-emerald-400 hover:bg-emerald-300 text-slate-950 shadow-xl shadow-emerald-500/25"
                       >
                         <Icon name="mail" className="w-4 h-4" />
                         <span>Send Message to Levie</span>
                       </button>
 
                       {formStatus === "sent" && (
-                        <span className="text-xs font-semibold text-emerald-600 dark:text-emerald-400">
-                          ✓ Message delivered! Levie will respond shortly.
+                        <span className="text-xs font-semibold text-emerald-400">
+                          ✓ Message delivered! Levie will reply shortly.
                         </span>
                       )}
                       {formStatus === "mailto-opened" && (
-                        <span className="text-xs font-semibold text-blue-600 dark:text-blue-400">
+                        <span className="text-xs font-semibold text-emerald-400">
                           ✓ Pre-filled email draft opened in your mail client!
                         </span>
                       )}
@@ -1931,15 +1725,15 @@ Recommended SOP Action: ${
           {/* ================================================================
               FOOTER
           ================================================================ */}
-          <footer className="py-8 px-4 sm:px-6 border-t border-slate-200/80 dark:border-slate-800/80 text-xs text-slate-500">
+          <footer className="py-10 px-4 sm:px-6 border-t border-white/10 text-xs text-slate-500">
             <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
               <p>
                 © {new Date().getFullYear()} <strong>{data.profile.name}</strong> (@{data.profile.username}). All rights reserved.
               </p>
-              <div className="flex items-center gap-4">
-                <a href="#home" className="hover:text-blue-600">Top ↑</a>
-                <a href={data.profile.resumeHtmlUrl} className="hover:text-blue-600">Printable Resume</a>
-                <a href={data.profile.socials.github} target="_blank" rel="noreferrer" className="hover:text-blue-600">
+              <div className="flex items-center gap-5">
+                <a href="#home" className="hover:text-emerald-400 transition">Top ↑</a>
+                <a href="./resume.html" className="hover:text-emerald-400 transition">Printable Resume</a>
+                <a href={data.profile.socials.github} target="_blank" rel="noreferrer" className="hover:text-emerald-400 transition">
                   GitHub Pages
                 </a>
               </div>
@@ -1947,27 +1741,27 @@ Recommended SOP Action: ${
           </footer>
 
           {/* ================================================================
-              MODAL 1: INTERACTIVE PORTFOLIO WORKBENCH MODAL
+              MODAL 1: INTERACTIVE WORKBENCH MODAL
           ================================================================ */}
           {activeSampleProject && (
             <div
-              className="fixed inset-0 z-50 bg-slate-950/75 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 overflow-y-auto"
+              className="fixed inset-0 z-50 bg-black/80 backdrop-blur-xl flex items-center justify-center p-3 sm:p-6 overflow-y-auto"
               onClick={() => setActiveSampleProject(null)}
             >
               <div
-                className="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-2xl max-w-4xl w-full p-5 sm:p-7 shadow-2xl my-auto max-h-[92vh] overflow-y-auto"
+                className="bg-[#0b0f19] border border-white/15 rounded-3xl max-w-4xl w-full p-6 sm:p-8 shadow-2xl my-auto max-h-[92vh] overflow-y-auto"
                 onClick={e => e.stopPropagation()}
               >
-                <div className="flex items-start justify-between gap-4 pb-4 mb-5 border-b border-slate-200 dark:border-slate-800">
+                <div className="flex items-start justify-between gap-4 pb-4 mb-5 border-b border-white/10">
                   <div>
-                    <span className="px-2.5 py-0.5 rounded text-xs font-mono font-semibold bg-blue-600/10 text-blue-600 dark:text-blue-400">
+                    <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                       LIVE INTERACTIVE WORKBENCH • {activeSampleProject.category}
                     </span>
-                    <h3 className="text-xl sm:text-2xl font-bold mt-1">{activeSampleProject.title}</h3>
+                    <h3 className="text-xl sm:text-2xl font-bold mt-2 text-white">{activeSampleProject.title}</h3>
                   </div>
                   <button
                     onClick={() => setActiveSampleProject(null)}
-                    className="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-rose-500 hover:text-white transition"
+                    className="p-2 rounded-full bg-white/10 hover:bg-rose-500 text-white transition"
                     aria-label="Close modal"
                   >
                     <Icon name="close" className="w-5 h-5" />
@@ -1987,35 +1781,35 @@ Recommended SOP Action: ${
           ================================================================ */}
           {activeCertModal && (
             <div
-              className="fixed inset-0 z-50 bg-slate-950/75 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto"
+              className="fixed inset-0 z-50 bg-black/80 backdrop-blur-xl flex items-center justify-center p-4 overflow-y-auto"
               onClick={() => setActiveCertModal(null)}
             >
               <div
-                className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl max-w-2xl w-full p-6 sm:p-7 shadow-2xl space-y-5 my-auto max-h-[92vh] overflow-y-auto"
+                className="bg-[#0b0f19] border border-white/15 rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl space-y-5 my-auto max-h-[92vh] overflow-y-auto"
                 onClick={e => e.stopPropagation()}
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex items-center gap-3">
-                    <div className="p-3 rounded-xl bg-blue-600/10 text-blue-600 dark:text-blue-400">
+                    <div className="p-3 rounded-2xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                       <Icon name="award" className="w-6 h-6" />
                     </div>
                     <div>
-                      <span className="text-xs font-mono uppercase text-blue-600 dark:text-blue-400 font-semibold">
+                      <span className="text-xs font-mono uppercase text-emerald-400 font-bold">
                         {activeCertModal.credentialType} • {activeCertModal.year}
                       </span>
-                      <h3 className="text-lg font-bold">{activeCertModal.title}</h3>
+                      <h3 className="text-lg font-bold text-white">{activeCertModal.title}</h3>
                     </div>
                   </div>
                   <button
                     onClick={() => setActiveCertModal(null)}
-                    className="p-1.5 rounded-lg bg-slate-100 dark:bg-slate-800"
+                    className="p-2 rounded-full bg-white/10 text-white"
                   >
                     <Icon name="close" className="w-4 h-4" />
                   </button>
                 </div>
 
                 {activeCertModal.imageUrl && (
-                  <div className="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-950">
+                  <div className="rounded-2xl overflow-hidden border border-white/10 bg-black/50">
                     <img
                       src={activeCertModal.imageUrl}
                       alt={activeCertModal.title}
@@ -2024,25 +1818,25 @@ Recommended SOP Action: ${
                   </div>
                 )}
 
-                <div className="p-4 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 space-y-2 text-xs sm:text-sm">
+                <div className="p-4 rounded-2xl bg-black/40 border border-white/10 space-y-2 text-xs sm:text-sm">
                   <p>
-                    <strong>Issuing Organization:</strong> {activeCertModal.issuer}
+                    <strong className="text-emerald-400">Issuing Organization:</strong> {activeCertModal.issuer}
                   </p>
                   <p>
-                    <strong>Domain Category:</strong> {activeCertModal.category}
+                    <strong className="text-emerald-400">Domain Category:</strong> {activeCertModal.category}
                   </p>
-                  <p className="text-slate-600 dark:text-slate-400 pt-1">{activeCertModal.summary}</p>
+                  <p className="text-slate-300 pt-1">{activeCertModal.summary}</p>
                 </div>
 
                 <div>
-                  <p className="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">
+                  <p className="text-[11px] font-mono uppercase tracking-wider text-slate-400 mb-2">
                     Competencies &amp; Standards Covered:
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {activeCertModal.skillsCovered.map(sk => (
                       <span
                         key={sk}
-                        className="px-3 py-1 rounded-lg text-xs font-semibold bg-blue-600/10 text-blue-700 dark:text-blue-300"
+                        className="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-300 border border-emerald-500/20"
                       >
                         ✓ {sk}
                       </span>
@@ -2050,8 +1844,8 @@ Recommended SOP Action: ${
                   </div>
                 </div>
 
-                <div className="pt-3 border-t border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3">
-                  <span className="text-xs font-mono text-emerald-600 dark:text-emerald-400 font-semibold">
+                <div className="pt-3 border-t border-white/10 flex flex-wrap items-center justify-between gap-3">
+                  <span className="text-xs font-mono text-emerald-400 font-bold">
                     ● {activeCertModal.verificationNote}
                   </span>
                   <div className="flex items-center gap-2">
@@ -2060,14 +1854,14 @@ Recommended SOP Action: ${
                         href={activeCertModal.imageUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="px-4 py-2 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 hover:bg-blue-600 hover:text-white transition"
+                        className="px-4 py-2 rounded-full text-xs font-semibold bg-white/10 text-white hover:bg-emerald-500 hover:text-slate-950 transition"
                       >
                         Open Full Image ↗
                       </a>
                     )}
                     <button
                       onClick={() => setActiveCertModal(null)}
-                      className="px-4 py-2 rounded-lg text-xs font-semibold bg-slate-900 dark:bg-blue-600 text-white"
+                      className="px-5 py-2 rounded-full text-xs font-bold bg-emerald-400 text-slate-950"
                     >
                       Close Preview
                     </button>
